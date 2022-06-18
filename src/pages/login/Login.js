@@ -8,7 +8,7 @@ function Login() {
       <img src="images/musicLogo.png" alt="logo" />
       <div className="login">
         <form>
-          <input type="text" placeholder="username" />
+          <input type="email" placeholder="email" />
           <input type="password" placeholder="password" />
           <button>login</button>
         </form>
