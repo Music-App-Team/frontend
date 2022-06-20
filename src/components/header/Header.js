@@ -8,7 +8,7 @@ function Header() {
   return (
     <div className="header">
       {" "}
-      <img id="logo" src="Group 1.png" alt="Logo" />
+      <img id="logo" src="images/musicLogo.png" alt="Logo" />
       <GiMusicalNotes id="music-notes" />
       <div className="main">
         <FaUserCircle id="profil-image" />
