@@ -1,25 +1,22 @@
 .footer {
-    background-color: #060606;
-  
+  background-color: #060606;
+  margin-top: auto;
+}
+
+h5 {
+  color: rgba(189, 164, 164, 1);
+}
+
+ul {
+  li {
+    color: rgba(226, 190, 190, 0.48);
+    padding-top: 5px;
   }
-  
-  h5 {
-      color: rgba(189, 164, 164, 1);
-  }
-  
-  ul {
-     
-    li {
-      color: rgba(226, 190, 190, 0.48);
-      padding-top: 5px;
-    }
-  }
-  .logo img{
-      width: 75%;
-      margin-top:-16px;
-      margin-left: -120px;
-  }
-  .copyright{
-      margin-left: 200px;
-      margin-bottom: -30px;
-  }
+}
+.logo img {
+  width: 75%;
+  margin-top: -16px;
+}
+.copyright {
+  margin-top: 150px;
+}

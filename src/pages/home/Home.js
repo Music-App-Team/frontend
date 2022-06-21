@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
+import { AiFillHome } from "react-icons/ai";
+import { MdOutlinePlaylistPlay } from "react-icons/md";
+import { FaSistrix } from "react-icons/fa";
+import "./Home.scss";
 
 function Home() {
-  return (
-    <div>Home</div>
-  )
+  return <div></div>;
 }
 
-export default Home
+export default Home;
