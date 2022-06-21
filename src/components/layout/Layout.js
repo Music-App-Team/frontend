@@ -12,6 +12,7 @@ function layout() {
   return (
     <div>
         <Header></Header>
+        < Playlist />
         <Routes>
           <Route path="/" element={<Home/>}></Route>
           <Route path="/search" element={<Search/>}></Route>
