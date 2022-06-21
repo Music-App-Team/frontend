@@ -1,3 +1,18 @@
 .test {
-  color: aliceblue;
+  color: rgb(255, 255, 255);
+  background-color: #0e0d0c;
+  width: 15rem;
+  height: 35rem;
+  font-size: 1.3rem;
+  // // margin-left: 3rem;
+  padding-left: 2rem;
+
+  .text-item {
+    color: white;
+    margin-left: 1rem;
+    line-height: 2.5rem;
+  }
+  .active {
+    color: #c22703;
+  }
 }
