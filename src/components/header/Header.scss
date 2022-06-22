@@ -1,47 +1,45 @@
 .header {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   width: 100%;
   height: 175px;
   background-color: #0e0d0c;
   color: #c22703;
 
+  @media (min-width: 740px) {
+    justify-content: space-between;
+    flex-direction: row;
+  }
+
   img {
     margin-left: 3rem;
   }
-  #music-notes {
-    font-size: 3rem;
+  #logo {
+    margin-bottom: 0.33rem;
   }
 
   .main {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
-
-    // @media (max-width: 1000px) {
-    //   margin-top: 0;
-    // }
+    margin-left: 2rem;
 
     .action-header:first-of-type {
-      // padding-left: 2rem;
-      // padding-top: 2rem;
       margin-left: 25px;
     }
     #profil-image {
-      // height: 100px;
       justify-content: space-around;
       margin-left: 20px;
       margin-right: 15px;
-      // padding-top: 2rem;
+
       font-size: 2rem;
     }
   }
 }
 @media (min-width: 740px) {
   .header {
-    flex-direction: row;
   }
   .action-header {
     margin-top: 0.9rem;
