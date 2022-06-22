@@ -13,6 +13,7 @@ function layout() {
   return (
     <div>
       <Header />
+      <Playlist />
       <PlaylistItem />
       <Routes>
         <Route path="/" element={<Home />}></Route>
