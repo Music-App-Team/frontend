@@ -8,7 +8,7 @@ import PlaylistDetail from "../../pages/playlistDetail/PlaylistDetail";
 import Footer from "../footer/Footer";
 import PlaylistItem from "../playlistItem/PlaylistItem";
 import "bootstrap/dist/css/bootstrap.css";
-import { Comment } from "../../pages/comments/Comment";
+
 
 function layout() {
   return (
@@ -20,7 +20,7 @@ function layout() {
         <Route path="/search" element={<Search />}></Route>
         <Route path="/playlists" element={<Playlist />}></Route>
         <Route path="/playlistDetail/:id" element={<PlaylistDetail />}></Route>
-        <Route path="/comment" element={<Comment />}></Route>
+       
       </Routes>
       <Footer />
     </div>
