@@ -20,7 +20,7 @@ function layout() {
         <Route path="/playlists" element={<Playlist />}></Route>
         <Route path="/playlistDetail/:id" element={<PlaylistDetail />}></Route>
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
