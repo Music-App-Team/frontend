@@ -8,7 +8,6 @@ import Footer from "../footer/Footer";
 import PlaylistItem from "../playlistItem/PlaylistItem";
 import "bootstrap/dist/css/bootstrap.css";
 
-
 function layout() {
   return (
     <div>
@@ -18,9 +17,8 @@ function layout() {
         <Route path="/" element={<Home />}></Route>
         <Route path="/playlists" element={<Playlist />}></Route>
         <Route path="/playlistDetail/:id" element={<PlaylistDetail />}></Route>
-       
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 }
