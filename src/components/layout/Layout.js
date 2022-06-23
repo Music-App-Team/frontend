@@ -7,6 +7,7 @@ import PlaylistDetail from "../../pages/playlistDetail/PlaylistDetail";
 import Footer from "../footer/Footer";
 import PlaylistItem from "../playlistItem/PlaylistItem";
 import "bootstrap/dist/css/bootstrap.css";
+import { Comment } from "../../pages/comments/Comment";
 
 function layout() {
   return (
