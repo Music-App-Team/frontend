@@ -1,24 +1,19 @@
 import React from "react";
+import "./playList.scss";
 
 function Playlist() {
   return (
-    <div class="playlist">
-      <div class="navbar bg-light">
-        <div class="container-fluid">
-          <h2>Play Lists</h2>
-          <form class="d-flex" role="search">
-            <button class="btn btn-outline-success" type="submit">
-              Create
-            </button>
-          </form>
-        </div>
-      </div>
-      <table class="table">
+    <div className="playlist">
+      <p class="h2">h2. Bootstrap heading</p>
+
+      {/* <h1>Playlist</h1>
+      <button> Create</button> */}
+      {/* <table class="table-playlist">
         <thead>
           <tr>
-            <th scope="col">First</th>
-            <th scope="col">Last</th>
-            <th scope="col">Handle</th>
+            <th>First</th>
+            <th>Last</th>
+            <th>Handle</th>
           </tr>
         </thead>
         <tbody>
@@ -33,11 +28,12 @@ function Playlist() {
             <td>@fat</td>
           </tr>
           <tr>
-            <td colspan="2">Larry the Bird</td>
+            <td>3</td>
+            <td>Larry the Bird</td>
             <td>@twitter</td>
           </tr>
         </tbody>
-      </table>
+      </table> */}
     </div>
   );
 }
