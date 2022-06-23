@@ -6,11 +6,7 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 const Footer = () => {
     return (
         <div>
-<<<<<<< HEAD
-            <div class="footer pt-4 pb-4  text-center text-md-start position-absolute bottom-0 start-50 translate-middle-x w-100 ">
-=======
             <div class="footer pt-4 pb-4  text-center text-md-start  w-100 ">
->>>>>>> 285d049ab4f488f8b48c60cc7f86cb799474045b
                 <div class="px-5 text-center">
                     <div class="row  ">
                         <div class="col-md-6 col-lg-3 ">
