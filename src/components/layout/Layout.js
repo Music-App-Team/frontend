@@ -10,6 +10,7 @@ import PlaylistItem from "../playlistItem/PlaylistItem";
 import "bootstrap/dist/css/bootstrap.css";
 import { Comment } from "../../pages/comments/Comment";
 
+
 function layout() {
   return (
     <div>
@@ -20,7 +21,6 @@ function layout() {
         <Route path="/search" element={<Search />}></Route>
         <Route path="/playlists" element={<Playlist />}></Route>
         <Route path="/playlistDetail/:id" element={<PlaylistDetail />}></Route>
-        <Route path="/comment" element={<Comment />}></Route>
       </Routes>
       <Footer />
     </div>
