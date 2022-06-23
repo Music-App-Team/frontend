@@ -7,7 +7,7 @@ import { MdOutlinePlaylistPlay } from "react-icons/md";
 import { FaSistrix } from "react-icons/fa";
 function PlaylistItem() {
   return (
-    <div className="test">
+    <div className="playItems">
       {" "}
       <AiFillHome />
       <NavLink to="/home" className="text-item">
@@ -20,7 +20,7 @@ function PlaylistItem() {
       </NavLink>{" "}
       <br />
       <FaSistrix />
-      <NavLink to="/SearchSong" className="text-item">
+      <NavLink to="/search" className="text-item">
         Search Song
       </NavLink>
     </div>
