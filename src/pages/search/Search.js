@@ -1,7 +1,4 @@
 import React from "react";
-import Header from "../../components/header/Header";
-import Footer from "../../components/footer/Footer";
-import PlaylistItem from "../../components/playlistItem/PlaylistItem";
 import "./search.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
@@ -13,15 +10,9 @@ import { FaMinus } from "react-icons/fa";
 function Search() {
   return (
     <>
-      {" "}
-      <Header />
       <Container fluid>
         <Row>
-          <Col className="playlistitem ps-0" lg={3}>
-            {" "}
-            <PlaylistItem />{" "}
-          </Col>
-          <Col lg={9} className="main-div">
+          <Col className="main-div ">
             <div class="container  my-5">
               <div class="row ">
                 <div class="col-md-12 ">
@@ -46,9 +37,16 @@ function Search() {
                   <h1>Song Result</h1>
                   <div className="albumResult">
                     <p>Shape of you</p>
-                    <FaPlayCircle />
-                    <FaMinus />
+                    <div className="icon-result">
+                      {" "}
+                      <FaPlayCircle className="play" />
+                      <FaMinus className="play" />
+                    </div>
+
                     <p>Ed Sheeran</p>
+                    <button>Pop Music</button>
+                    <p>06:09</p>
+                    <p className="langSong">Englisch</p>
                   </div>
                 </div>
               </div>
@@ -56,7 +54,6 @@ function Search() {
           </Col>
         </Row>
       </Container>
-      <Footer />
     </>
   );
 }
