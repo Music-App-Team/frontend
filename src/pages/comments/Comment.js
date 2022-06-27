@@ -19,7 +19,7 @@ export const Comment = () => {
                 <Row>
                     <Col className="playlistitem ps-0" lg={3}>     <PlaylistItem /> </Col>
                     <Col lg={9}>
-                        <div class="container  my-5">
+                        <div class="container  my-5 bg-black">
                             <div class="row ">
                                 <div class="col-md-12 "><h1>Comments ...</h1><hr className="hr" />
                                     <div class="d-flex   flex-column comment-section">
