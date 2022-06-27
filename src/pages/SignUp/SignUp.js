@@ -15,7 +15,7 @@ function SignUp() {
           <input type="password" placeholder="confirm password" />
           <button>SignUp</button>
         </form>
-        <Link to="/Landing">already sign up ? log in</Link>
+        <Link to="/login">already sign up ? log in</Link>
       </div>
     </div>
   );
