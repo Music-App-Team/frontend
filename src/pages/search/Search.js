@@ -6,15 +6,9 @@ import "./search.scss";
 
 function Search() {
   return (
-    <>
-      {" "}
-      <Header />
-      <PlaylistItem />
       <div>
         <div className="search">Search etwas</div>
       </div>
-      <Footer />
-    </>
   );
 }
 

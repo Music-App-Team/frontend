@@ -1,28 +1,15 @@
 import React from "react";
-import { useNavigate } from "react-router-dom";
-import { NavLink } from "react-router-dom";
-import "./Playlist.scss";
-import { AiFillHome } from "react-icons/ai";
-import { MdOutlinePlaylistPlay } from "react-icons/md";
-import { FaSistrix } from "react-icons/fa";
-function PlaylistItem() {
+import "./playlistItem.scss";
+import { Link } from "react-router-dom";
+
+function PlaylistItem({ data }) {
   return (
-    <div className="playItems">
-      {" "}
-      <AiFillHome />
-      <NavLink to="/home" className="text-item">
-        Home
-      </NavLink>{" "}
-      <br />
-      <MdOutlinePlaylistPlay />
-      <NavLink to="/playlist" className="text-item">
-        Play List
-      </NavLink>{" "}
-      <br />
-      <FaSistrix />
-      <NavLink to="/search" className="text-item">
-        Search Song
-      </NavLink>
+    <div div className="playlistItem">
+      <h1>title:{data.title}</h1>
+      <span>author:{data.user}</span>
+      <Link to={`/app/playlist/${data._id}`}>
+        <button>View</button>
+      </Link>
     </div>
   );
 }

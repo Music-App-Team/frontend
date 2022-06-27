@@ -1,8 +1,12 @@
 import React from 'react'
 
-function MusicItem() {
+function MusicItem({music}) {
   return (
-    <div>MusicItem</div>
+    <div>
+      <span>{music.name}</span>
+      <span>{music.artist}</span>
+      <button>play</button>
+    </div>
   )
 }
 
