@@ -5,6 +5,7 @@ import SignUp from "../pages/SignUp/SignUp";
 import Landing from "../pages/landing/Landing";
 import Search from "../pages/search/Search";
 import { Comment } from "../pages/comments/Comment";
+import Playlist from "../pages/playlists/Playlist";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
         <Route path="/landing" element={<Landing />}></Route>
         <Route path="*" element={<Layout />} />
         <Route path="/comment" element={<Comment />}></Route>
+        <Route path="/playlist" element={<Playlist />}></Route>
       </Routes>
     </div>
   );
