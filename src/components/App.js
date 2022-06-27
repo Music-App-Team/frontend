@@ -1,23 +1,37 @@
 import Layout from "./layout/Layout";
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import Login from "../pages/login/Login";
 import SignUp from "../pages/SignUp/SignUp";
-import Landing from "../pages/landing/Landing";
+import Landing from "../pages/home/Home";
 import Search from "../pages/search/Search";
 import { Comment } from "../pages/comments/Comment";
+import Dashboard from "../pages/dashboard/dashboard";
 import Playlist from "../pages/playlists/Playlist";
+import PlaylistDetail from "../pages/playlistDetail/PlaylistDetail";
 
 function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/search" element={<Search />}></Route>
         <Route path="/login" element={<Login />} />
         <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/landing" element={<Landing />}></Route>
-        <Route path="*" element={<Layout />} />
-        <Route path="/comment" element={<Comment />}></Route>
-        <Route path="/playlist" element={<Playlist />}></Route>
+        <Route path="/" element={<Landing />}></Route>
+        <Route
+          path="/app/*"
+          element={
+            <Layout>
+              <Routes>
+                <Route path="search" element={<Search />}></Route>
+                <Route path="comment" element={<Comment />}></Route>
+                <Route path="dashboard" element={<Dashboard />}></Route>
+                <Route path="playlists" element={<Playlist />}></Route>
+                <Route path="playlist/:id" element={<PlaylistDetail />}></Route>
+                <Route path="*" element={<Navigate to="/app/dashboard" />} ></Route>
+              </Routes>
+            </Layout>
+          }
+        ></Route>
+        <Route path="*" element={<Navigate to="/app/dashboard" />}></Route>
       </Routes>
     </div>
   );
