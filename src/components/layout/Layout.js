@@ -4,8 +4,6 @@ import Footer from "../footer/Footer";
 import Sidebar from "../sidebar/sidebar";
 import "./Layout.scss";
 
-
-
 function layout({children}) {
   return (
     <div className="layout">
