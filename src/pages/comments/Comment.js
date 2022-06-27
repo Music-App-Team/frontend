@@ -13,11 +13,9 @@ export const Comment = () => {
     return (
         <div>
             <Header />
-   
-
             <Container fluid >
                 <Row>
-                    <Col className="playlistitem ps-0" lg={3}>     <PlaylistItem /> </Col>
+                    <Col className="playlistitem ps-0" lg={3}>  <PlaylistItem /> </Col>
                     <Col lg={9}>
                         <div class="container  my-5">
                             <div class="row ">
