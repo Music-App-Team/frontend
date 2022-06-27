@@ -1,0 +1,36 @@
+.sidebar {
+  min-height: 30rem;
+  color: rgb(255, 255, 255);
+  background-color: #0e0d0c;
+  height: 100%;
+  font-size: 1.3rem;
+  padding: 2rem 3rem;
+
+  ul {
+    padding: unset;
+    list-style: none;
+    margin: 0;
+  }
+  a {
+    text-decoration: unset;
+    font-weight: 500;
+  }
+  @media (max-width: 740px) {
+    font-size: 1rem;
+    background-color: #1a1a1a;
+  }
+  @media (min-width: 740px) {
+    background-color: #1a1a1a;
+  }
+  @media (min-width: 990px) {
+    background-color: #0e0d0c;
+  }
+  .text-item {
+    color: white;
+    margin-left: 1rem;
+    line-height: 2.5rem;
+  }
+  .active {
+    color: #c22703;
+  }
+}

@@ -1,32 +1,42 @@
+@import "../../assets/mixins";
 .header {
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 175px;
   background-color: #0e0d0c;
-  color: #c22703;
- 
-
-  @media (min-width: 740px) {
-    justify-content: space-between;
-    flex-direction: row;
+  color: white;
+  grid-column: 1/3;
+  padding: 0.5rem 3rem;
+  justify-content: space-between;
+  flex-direction: row;
+  @include respond(phone) {
+    padding: 0.5rem;
   }
-
   img {
     margin-left: 3rem;
+    @include respond(phone) {
+      margin-left: 1rem;
+    }
   }
   #logo {
     margin-bottom: 0.33rem;
+    height: 3rem;
   }
-
   .main {
     display: flex;
     flex-direction: row-reverse;
     align-items: center;
     margin-left: 2rem;
-
+    @include respond(phone) {
+      margin-left: unset;
+    }
+    a {
+      text-decoration: unset;
+      color: white;
+      font-weight: 500;
+      text-transform: uppercase;
+    }
     .action-header:first-of-type {
       margin-left: 25px;
     }
@@ -34,17 +44,17 @@
       justify-content: space-around;
       margin-left: 20px;
       margin-right: 15px;
-
-      font-size: 2rem;
+      color: white;
+      font-size: 1.5rem;
     }
   }
 }
 @media (min-width: 740px) {
   .header {
   }
-  .action-header {
-    margin-top: 0.9rem;
-  }
+  // .action-header {
+  //   margin-top: 0.9rem;
+  // }
   #profile-image {
     padding-bottom: 20px;
   }
