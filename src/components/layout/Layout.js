@@ -1,23 +1,17 @@
 import React from "react";
 import Header from "../header/Header";
-import { Routes, Route } from "react-router-dom";
-import Home from "../../pages/home/Home";
-import Playlist from "../../pages/playlists/Playlist";
-import PlaylistDetail from "../../pages/playlistDetail/PlaylistDetail";
 import Footer from "../footer/Footer";
-import PlaylistItem from "../playlistItem/PlaylistItem";
-import "bootstrap/dist/css/bootstrap.css";
+import Sidebar from "../sidebar/sidebar";
+import "./Layout.scss";
 
-function layout() {
+
+
+function layout({children}) {
   return (
-    <div>
+    <div className="layout">
       <Header />
-      <PlaylistItem />
-      <Routes>
-        <Route path="/" element={<Home />}></Route>
-        <Route path="/playlists" element={<Playlist />}></Route>
-        <Route path="/playlistDetail/:id" element={<PlaylistDetail />}></Route>
-      </Routes>
+      <Sidebar />
+      {children}
       <Footer />
     </div>
   );
