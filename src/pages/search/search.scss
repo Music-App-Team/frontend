@@ -1,5 +1,29 @@
-.search {
-  width: 20rem;
-  height: 30rem;
-  background-color: aqua;
+.main-div {
+  height: 50rem;
+}
+
+.search-input {
+  width: 80%;
+  background-color: grey;
+}
+.albumResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 80%;
+  background-color: grey;
+  .star {
+    font-size: 2rem;
+    margin-right: 50px;
+  }
+  button {
+    border-radius: 8px;
+    margin-right: 1rem;
+    width: 150px;
+    background-color: #35626f;
+  }
+}
+p {
+  color: black;
 }
