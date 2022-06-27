@@ -26,7 +26,7 @@ function App() {
                 <Route path="dashboard" element={<Dashboard />}></Route>
                 <Route path="playlists" element={<Playlist />}></Route>
                 <Route path="playlist/:id" element={<PlaylistDetail />}></Route>
-                <Route path="*" element={<Navigate to="/app/dashboard" />} ></Route>
+                {/* <Route path="*" element={<Navigate to="/app/dashboard" />} ></Route> */}
               </Routes>
             </Layout>
           }
