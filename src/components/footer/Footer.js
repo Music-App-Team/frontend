@@ -5,13 +5,13 @@ import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 const Footer = () => {
     return (
-        <div>
+        <div className="footerContainer">
             <div class="footer pt-4 pb-4  text-center text-md-start  w-100 ">
                 <div class="px-5 text-center">
                     <div class="row  ">
                         <div class="col-md-6 col-lg-3 ">
                             <div class="logo ">
-                                <img src="images/musicLogo.png" alt="" />
+                                <img src="/images/Logo.png" alt="" />
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-2 ">
