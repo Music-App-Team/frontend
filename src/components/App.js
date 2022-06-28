@@ -25,8 +25,13 @@ function App() {
                 <Route path="comment" element={<Comment />}></Route>
                 <Route path="dashboard" element={<Dashboard />}></Route>
                 <Route path="playlists" element={<Playlist />}></Route>
+<<<<<<< HEAD
                 <Route path="playlist/:id" element={<PlaylistDetail />}></Route>
                 {/* <Route path="*" element={<Navigate to="/app/dashboard" />} ></Route> */}
+=======
+                <Route path="playlist" element={<PlaylistDetail />}></Route>
+                <Route path="*" element={<Navigate to="/app/dashboard" />} ></Route>
+>>>>>>> dev
               </Routes>
             </Layout>
           }

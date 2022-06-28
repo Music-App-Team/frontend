@@ -17,6 +17,10 @@ function Search() {
               <div class="row ">
                 <div class="col-md-12 ">
                   <h1>Play List</h1>
+<<<<<<< HEAD
+=======
+
+>>>>>>> dev
                   <input
                     className="search-input"
                     type="text"
