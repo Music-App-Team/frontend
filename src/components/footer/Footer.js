@@ -11,7 +11,7 @@ const Footer = () => {
                     <div class="row  ">
                         <div class="col-md-6 col-lg-3 ">
                             <div class="logo ">
-                                <img src="images/musicLogo.png" alt="" />
+                                <img src="/images/musicLogo.png" alt="" />
                             </div>
                         </div>
                         <div class="col-md-6 col-lg-2 ">

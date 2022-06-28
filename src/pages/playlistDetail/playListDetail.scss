@@ -3,13 +3,14 @@
 }
 
 .container-playlistdetail{
-    height: 100vh;
+  min-height:  100vh;
+  background-color: #1a1a1a;
+  padding-top: 20px;
 }
 
 .playlistaction{
     display: flex;
     flex-direction: row;
-    margin-top: 20px;
     color:var(--color);
     justify-content: center;
 div{
@@ -17,12 +18,16 @@ div{
         align-self: flex-end;
 }
 img{
-    margin-right: 0px;
+    width: 200px;
+    height: 200px;
 }
 .playall{
  display:inline-block;
  margin-left: 0px;
- 
+ p{
+     color: var(--color);
+    }
+
 }
 button{
      background-color: transparent;
@@ -40,7 +45,13 @@ p{
     margin-top: 15%;
     margin-bottom: 0px;
 }
-}    
+}   
+
+
+.hr{
+     color: var(--color);
+ }
+
 .list-songs{
     ul{ 
     display: flex;
