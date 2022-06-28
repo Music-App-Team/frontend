@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React from "react";
 import "./playlistItem.scss";
 import { Link } from "react-router-dom";
@@ -16,5 +15,3 @@ function PlaylistItem({ data }) {
 }
 
 export default PlaylistItem;
-=======
->>>>>>> dev
