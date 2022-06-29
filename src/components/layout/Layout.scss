@@ -1,5 +1,9 @@
-.layout{
-    display: grid;
-    grid-template-columns: max-content 1fr;
-    grid-template-rows: max-content 1fr max-content;
+body{
+  min-height: 100vh;
+
+}
+.layout {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  grid-template-rows: max-content 1fr max-content;
 }

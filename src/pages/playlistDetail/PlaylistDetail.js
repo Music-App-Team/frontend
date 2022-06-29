@@ -22,7 +22,7 @@ function PlaylistDetail() {
           <div> <img src="/images/playlistdetail.png" className="rounded float-start " alt="" /></div>
           <div class="playall row ">
             <p>Light Musics</p>
-            <p>5 songs <Link className="link" to="/comment"><AiOutlineComment /></Link></p>
+            <p>5 songs <Link className="link" to="/app/comment"><AiOutlineComment /></Link></p>
             <button className="play">Play All <BsPlay /></button>
           </div>
           <div class="download"><button>Download <AiOutlineCloudDownload /></button></div>
@@ -30,7 +30,6 @@ function PlaylistDetail() {
           <div class="delete"><button>Delete <RiDeleteBin5Line /></button></div>
           <div class="add-song"><button onClick={() => setIsOpen(true)}>Add Song <MdAddBox /></button>
           <Modal open={isOpen} onClose={() => setIsOpen(false)}>
-          Fancy Modal
         </Modal>
           </div>
         </div>
