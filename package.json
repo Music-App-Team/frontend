@@ -9,6 +9,7 @@
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/react": "^13.0.0",
     "@testing-library/user-event": "^13.2.1",
+    "axios": "^0.27.2",
     "bootstrap": "^5.1.3",
     "react": "^18.2.0",
     "react-bootstrap": "^2.4.0",
@@ -17,8 +18,8 @@
     "react-lorem-ipsum": "^1.4.10",
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
+    "react-toastify": "^9.0.5",
     "sass": "^1.52.3",
-    "sweetalert2": "^11.4.19",
     "web-vitals": "^2.1.0"
   },
   "scripts": {
