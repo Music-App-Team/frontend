@@ -10,28 +10,40 @@ import Playlist from "../pages/playlists/Playlist";
 import PlaylistDetail from "../pages/playlistDetail/PlaylistDetail";
 
 function App() {
+  const isLogin = localStorage.getItem("token");
+
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/SignUp" element={<SignUp />} />
-        <Route path="/" element={<Landing />}></Route>
+        <Route
+          path="/login"
+          element={isLogin ? <Navigate to="/app" /> : <Login />}
+        />
+        <Route
+          path="/SignUp"
+          element={isLogin ? <Navigate to="/app" /> : <SignUp />}
+        />
+        <Route path="/" element={<Landing />} />
         <Route
           path="/app/*"
           element={
-            <Layout>
-              <Routes>
-                <Route path="search" element={<Search />}></Route>
-                <Route path="comment" element={<Comment />}></Route>
-                <Route path="dashboard" element={<Dashboard />}></Route>
-                <Route path="playlists" element={<Playlist />}></Route>
-                <Route path="playlist" element={<PlaylistDetail />}></Route>
-                <Route path="*" element={<Navigate to="/app/dashboard" />} ></Route>
-              </Routes>
-            </Layout>
+            isLogin ? (
+              <Layout>
+                <Routes>
+                  <Route path="search" element={<Search />} />
+                  <Route path="comment" element={<Comment />} />
+                  <Route path="dashboard" element={<Dashboard />} />
+                  <Route path="playlists" element={<Playlist />} />
+                  <Route path="playlist/:id" element={<PlaylistDetail />} />
+                  <Route path="*" element={<Navigate to="/app/dashboard" />} />
+                </Routes>
+              </Layout>
+            ) : (
+              <Navigate to={"/login"} />
+            )
           }
-        ></Route>
-        <Route path="*" element={<Navigate to="/app/dashboard" />}></Route>
+        />
+        <Route path="*" element={<Navigate to="/app/dashboard" />} />
       </Routes>
     </div>
   );

@@ -49,4 +49,4 @@ function PlaylistDetail() {
   )
 }
 
-export default PlaylistDetail
+export default PlaylistDetail;
