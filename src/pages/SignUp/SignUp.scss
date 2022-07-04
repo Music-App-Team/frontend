@@ -60,6 +60,16 @@
   button:hover {
     background-color: #1c1111;
   }
+  
+   button:disabled {
+      opacity: 0.5;
+
+      &:hover {
+        background-color: #000000;
+      }
+    }
+
+
   form,
   a {
     color: #a5a0a0;

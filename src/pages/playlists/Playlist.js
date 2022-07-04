@@ -92,9 +92,5 @@ function Playlist() {
   );
 }
 
-<<<<<<< HEAD
-export default Playlist;
-=======
 export default Playlist;
 
->>>>>>> dev
