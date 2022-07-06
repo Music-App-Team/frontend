@@ -40,7 +40,7 @@ function Playlist() {
           <thead>
             <tr>
               <th>Name</th>
-              <th>Author</th>
+              <th>User</th>
               <th>Actions</th>
             </tr>
           </thead>
@@ -48,7 +48,7 @@ function Playlist() {
             {playlists.map((item) => (
               <tr>
                 <td>{item.title}</td>
-                <td>Eli</td>
+                <td>{item.user?.firstName}</td>
                 <td>
                   <div className="container-action">
                     {" "}
@@ -69,6 +69,10 @@ function Playlist() {
           </tbody>
         </Table>
       </Container>
+      <CreatePlaylistModal
+        open={openCreateModal}
+        onUpdate={getPlayList}
+        onClose={() => setOpenCreateModal(false)}
       <CreatePlaylistModal open={openCreateModal} onUpdate={getPlayList} onClose={() => setOpenCreateModal(false)}
       />
     </div>
