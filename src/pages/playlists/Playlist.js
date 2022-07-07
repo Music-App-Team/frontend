@@ -73,8 +73,6 @@ function Playlist() {
         open={openCreateModal}
         onUpdate={getPlayList}
         onClose={() => setOpenCreateModal(false)}
-        
-      <CreatePlaylistModal open={openCreateModal} onUpdate={getPlayList} onClose={() => setOpenCreateModal(false)}
       />
     </div>
   );
