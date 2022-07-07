@@ -57,7 +57,7 @@ export const Comment = () => {
                                         <div class="p-2">
                                             <div class="d-flex flex-column user-info">
                                                 <div class="d-flex flex-column justify-content-start ml-2">
-                                                    <span class="d-block font-weight-bold name">Marry Andrews</span>
+                                                    <span class="d-block font-weight-bold name">{item.user?.firstName}</span>
                                                     <span class="date "><Moment format="lll">{item.comments[0].createdAt}</Moment></span>
                                                 </div>
                                                 <div class="mt-2">
