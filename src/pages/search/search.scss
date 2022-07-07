@@ -4,6 +4,9 @@
   background-color: #1a1a1a;
   display: flex;
   flex-direction: row;
+  .col-md-12 {
+    color: whitesmoke;
+  }
 
   @media (max-width: 1150px) {
     flex-direction: column;
