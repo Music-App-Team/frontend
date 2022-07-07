@@ -7,6 +7,7 @@ import { AiOutlineDislike, AiOutlineLike } from "react-icons/ai";
 import CreatePlaylistModal from "./createPlaylistModal";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { Link } from "react-router-dom";
 
 function Playlist() {
   const [openCreateModal, setOpenCreateModal] = useState(false);
@@ -25,6 +26,13 @@ function Playlist() {
       .get("http://localhost:3010/playlist/getAllPlaylists")
       .then((res) => setPlaylists(res.data))
       .catch((err) => toast.error(err.response?.data?.message || err.message));
+  }
+
+  function handleAddToFavorite(playlistId) {
+    axios.get(`/user/addPlaylistToFavorite/${playlistId}`)
+      .then(res => {
+      toast.success(res.data.message)
+    }).catch((err)=> toast.error(err.response?.data?.message || err.message))
   }
 
   return (
@@ -51,17 +59,22 @@ function Playlist() {
                 <td>{item.user?.firstName}</td>
                 <td>
                   <div className="container-action">
-                    {" "}
-                    <button className="button-playlist">View</button>
+                    <Link to={`/app/playlist/${item._id}`}>
+                      <button className="button-playlist">View</button>
+                    </Link>
                     <a className="like" href="url">
                       <AiOutlineLike />
                     </a>
                     <a className="dislike" href="url">
                       <AiOutlineDislike />
                     </a>
-                    <a className="star" href="url">
+                    <span
+                      className="star"
+                      href="url"
+                      onClick={() => handleAddToFavorite(item._id)}
+                    >
                       <MdOutlineStarOutline />
-                    </a>
+                    </span>
                   </div>
                 </td>
               </tr>
@@ -73,8 +86,6 @@ function Playlist() {
         open={openCreateModal}
         onUpdate={getPlayList}
         onClose={() => setOpenCreateModal(false)}
-        
-      <CreatePlaylistModal open={openCreateModal} onUpdate={getPlayList} onClose={() => setOpenCreateModal(false)}
       />
     </div>
   );

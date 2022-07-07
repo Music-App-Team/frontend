@@ -9,3 +9,6 @@
 
 # Comment Page 
 npm install react-bootstrap bootstrap
+## Comment page Install Moment to Convert the Time
+npm install --save moment react-moment
+npm install --save moment-timezone
