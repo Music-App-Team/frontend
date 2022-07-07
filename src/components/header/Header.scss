@@ -31,16 +31,15 @@
     @include respond(phone) {
       margin-left: unset;
     }
-    a {
-      text-decoration: unset;
-      color: white;
-      font-weight: 500;
-      text-transform: uppercase;
-    }
-    .action-header:first-of-type {
-      margin-left: 25px;
-    }
-    #profil-image {
+   button{
+    border-radius: 5px;
+    border: none;
+    background-color: unset;
+    color: white;
+    font-weight: bold;
+  }
+
+    #profile-image {
       justify-content: space-around;
       margin-left: 20px;
       margin-right: 15px;
@@ -48,14 +47,5 @@
       font-size: 1.5rem;
     }
   }
-}
-@media (min-width: 740px) {
-  .header {
-  }
-  // .action-header {
-  //   margin-top: 0.9rem;
-  // }
-  #profile-image {
-    padding-bottom: 20px;
-  }
+
 }

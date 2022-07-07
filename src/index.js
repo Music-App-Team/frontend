@@ -5,6 +5,11 @@ import { BrowserRouter } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.css";
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import "./index.scss";
+import axios from "axios";
+
+axios.defaults.headers.common.token = localStorage.getItem("token");
+axios.defaults.baseURL = "http://localhost:3010";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(

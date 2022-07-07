@@ -12,7 +12,7 @@ function Header() {
     <div className="header">
       <img id="logo" src="/images/Logo.png" alt="Logo" />
       <div className="main">
-        <FaUserCircle id="profil-image" />
+        <FaUserCircle id="profile-image" />
         <button onClick={handleSignout}>Sign out</button>
       </div>
     </div>
