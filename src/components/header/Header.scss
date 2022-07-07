@@ -1,4 +1,5 @@
 @import "../../assets/mixins";
+
 .header {
   display: flex;
   justify-content: center;
@@ -37,15 +38,23 @@
     background-color: unset;
     color: white;
     font-weight: bold;
+    padding-right: 1.8rem;
   }
 
     #profile-image {
       justify-content: space-around;
       margin-left: 20px;
-      margin-right: 15px;
+      margin-right: 20px;
       color: white;
-      font-size: 1.5rem;
+      font-size: 30rem;
     }
+  }
+  a{
+    padding:1.2rem;
+    text-decoration: none;
+    color: white;
+    font-size:1.2rem;
+    font-weight:bold;
   }
 
 }
