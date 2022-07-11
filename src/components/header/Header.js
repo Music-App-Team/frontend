@@ -12,6 +12,8 @@ function Header() {
     signoutContext();
   }
 
+  const isLogin = localStorage.getItem("token");
+
   return (
     <div className="header">
       <img id="logo" src="/images/Logo.png" alt="Logo" />
