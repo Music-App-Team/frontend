@@ -3,20 +3,32 @@ import { Link } from "react-router-dom";
 import "./Login.scss";
 import axios from "axios";
 import { toast } from "react-toastify";
+import { useUserInfoContext } from "../../context/UserInfoContext";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  const { loginContext } = useUserInfoContext();
+
   function handleSubmit(e) {
     e.preventDefault();
 
-    axios.post("http://localhost:3010/auth/login", { email, password })
+    axios
+      .post("http://localhost:3010/auth/login", { email, password })
       .then((res) => {
         toast.success("login successfully");
         const token = res.data.token;
+        const userInfo = res.data.userInfo;
         localStorage.setItem("token", token);
-        window.location.reload();
+        localStorage.setItem("email", userInfo.email);
+        localStorage.setItem("image", userInfo.image);
+        localStorage.setItem("fullName", userInfo.fullName);
+        loginContext({
+          email: userInfo.email,
+          image: userInfo.image,
+          fullName: userInfo.fullName,
+        });
       })
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   }
