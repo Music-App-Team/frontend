@@ -22,6 +22,8 @@ export default function UserInfo() {
     };
   };
 
+
+
    // Assuming only image
   
   //var file = this.refs.file.files[0];
@@ -51,7 +53,9 @@ export default function UserInfo() {
 
   return (
     <div className="info-user">
-      <img src={ imagePreview ||  userInfo?.image} className="profileImagePreview" />
+     
+      <img src={imagePreview || userInfo?.image} className="profileImagePreview" alt="profileImage" />
+   
       <form
         className="form-foto"
         name="fileForm"

@@ -13,6 +13,7 @@ import Profile from "./profile/Profile";
 
 function App() {
   const { isAuthenticated } = useUserInfoContext();
+  console.log("isAuthenticated", isAuthenticated);
   return (
     <div className="App">
       <Routes>
