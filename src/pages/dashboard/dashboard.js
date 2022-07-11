@@ -11,7 +11,7 @@ function Dashboard() {
 
   function getData() {
     axios
-      .get("/user/getFavoritePlaylists")
+      .get("/user/getMyFavoritePlaylists")
       .then((res) => {
         setPlaylists(res.data);
       })
@@ -34,7 +34,7 @@ function Dashboard() {
   return (
     <div className="container-fluid">
       <Container className="container-dashboard">
-        <h1 className="dashboard-h1">Home</h1>
+        <h1 className="playlist-h1">Home</h1>
         <Table className="playlist-table">
           <thead>
             <tr>
@@ -50,8 +50,9 @@ function Dashboard() {
                 <td>{item.user?.firstName}</td>
                 <td>
                   <div className="container-action">
+                    {" "}
                     <Link to={`/app/playlist/${item._id}`}>
-                        <button className="button-playlist">Open</button>
+                      <button className="button-playlist">Open</button>
                     </Link>
                     <span
                       onClick={() => handleRemovePlaylistFromFavorite(item._id)}
@@ -70,3 +71,6 @@ function Dashboard() {
 }
 
 export default Dashboard;
+
+
+
