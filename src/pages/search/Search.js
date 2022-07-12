@@ -23,20 +23,22 @@ function Search() {
                     type="text"
                     placeholder="search.."
                   />
-                  <h1>Album Result</h1>
-                  <div className="albumResult">
-                    <p>Pop Music</p>
-                    <p>Sam</p>
-                    <p>2 songs</p>
-                    <div>
-                      {" "}
-                      <AiOutlineStar className="star" />
-                      <button>View</button>
+                  <div>
+                    <h1>Album Result</h1>
+                    <div className="albumResult">
+                      <p className="album-text">Pop Music</p>
+                      <p>Sam</p>
+                      <p>2 songs</p>
+                      <div>
+                        {" "}
+                        <AiOutlineStar className="star" />
+                        <button>View</button>
+                      </div>
                     </div>
                   </div>
                   <h1>Song Result</h1>
                   <div className="albumResult">
-                    <p>Shape of you</p>
+                    <p className="album-text">Shape of you</p>
                     <div className="icon-result">
                       {" "}
                       <FaPlayCircle className="play" />
