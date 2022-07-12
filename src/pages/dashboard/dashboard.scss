@@ -56,33 +56,31 @@
 
 
  */
- .container-fluid {
+.container-fluid {
   background-color: #1a1a1a;
 
   .container-dashboard {
     height: 650px;
     background-color: #1a1a1a;
+    color: #1a1a1a;
 
-   
+    .dashboard-h1 {
+      color: #1a1a1a;
+      font-size: 3rem;
+      margin-bottom: 2rem;
+    }
 
-      .dashboard-h1 {
-        color: #1a1a1a;
-        font-size: 3rem;
-        margin-bottom: 2rem;
-      }
-
-      .button-create {
-        font-family: "Montserrat", sans-serif;
-        font-size: 1rem;
-        color: #c8d1d6;
-        text-decoration: none;
-        background-color: #821d05;
-        border-radius: 8px;
-        margin-right: 1rem;
-        margin-bottom: 1rem;
-        width: 120px;
-      }
-    
+    .button-create {
+      font-family: "Montserrat", sans-serif;
+      font-size: 1rem;
+      color: #c8d1d6;
+      text-decoration: none;
+      background-color: #821d05;
+      border-radius: 8px;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+      width: 120px;
+    }
 
     .playlist-table {
       color: rgb(255, 255, 255);
@@ -108,7 +106,6 @@
           border-radius: 8px;
           margin-right: 1rem;
           padding: 0.2rem 01rem;
-
         }
 
         .trash {
