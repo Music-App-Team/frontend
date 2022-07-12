@@ -22,21 +22,18 @@ export default function UserInfo() {
     };
   };
 
+  // Assuming only image
 
-
-   // Assuming only image
-  
   //var file = this.refs.file.files[0];
   //var reader = new FileReader();
   //var url = reader.readAsDataURL(file);
-//
+  //
   // reader.onloadend = function (e) {
   //    this.setState({
   //        imgSrc: [reader.result];
   //    })
   //  }.bind(this);
   //console.log(url) // Would see a path?
-
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -53,9 +50,12 @@ export default function UserInfo() {
 
   return (
     <div className="info-user">
-     
-      <img src={imagePreview || userInfo?.image} className="profileImagePreview" alt="profileImage" />
-   
+      <img
+        src={imagePreview || userInfo?.image}
+        className="profileImagePreview"
+        alt="profileImage"
+      />
+
       <form
         className="form-foto"
         name="fileForm"
@@ -63,8 +63,8 @@ export default function UserInfo() {
         onSubmit={handleSubmit}
       >
         <label htmlFor="file">
-          <BsFillPenFill className="pen" /> Choose your file...
-        </label>
+          <BsFillPenFill className="pen" /> Choose your picture...
+        </label>{" "}
         <input
           className="browse"
           type="file"

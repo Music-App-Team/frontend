@@ -14,9 +14,14 @@
   @include respond(phone) {
     padding: 0.5rem;
   }
+
+  .profileImage {
+    border-radius: 50%;
+  }
   img {
     height: 2rem;
     margin-left: 3rem;
+
     @include respond(phone) {
       margin-left: 1rem;
     }
@@ -34,14 +39,14 @@
       margin-left: unset;
 
     }
-   button{
-    border-radius: 5px;
-    border: none;
-    background-color: unset;
-    color: white;
-    font-weight: bold;
-    padding-right: 1.8rem;
-  }
+    button {
+      border-radius: 5px;
+      border: none;
+      background-color: unset;
+      color: white;
+      font-weight: bold;
+      padding-right: 1.8rem;
+    }
 
     #profile-image {
       justify-content: space-around;
@@ -51,12 +56,11 @@
       font-size: 30rem;
     }
   }
-  a{
-    padding:1.2rem;
+  a {
+    padding: 1.2rem;
     text-decoration: none;
     color: white;
-    font-size:1.2rem;
-    font-weight:bold;
+    font-size: 1.2rem;
+    font-weight: bold;
   }
-
 }
