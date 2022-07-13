@@ -37,11 +37,11 @@ function PlaylistDetail() {
   }, [playlistId]);
 
   if (!data) return <p>loading ...</p>;
-
+/* 
   const [playlistName,setPlaylistName]=useState(null)
 
-  const params = useParams();
-
+  const params = useParams(); */
+/* 
  useEffect(()=>{
 function playlistname(){ 
     
@@ -52,7 +52,7 @@ function playlistname(){
  if (params?.id){
   playlistname()
  }
- },[params.id]);
+ },[params.id]); */
 
   return (
     <div>
