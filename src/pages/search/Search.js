@@ -1,13 +1,30 @@
 import React from "react";
+import { useState } from "react";
 import "./search.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-import { AiOutlineStar } from "react-icons/ai";
+// import { AiOutlineStar } from "react-icons/ai";
 import { FaPlayCircle } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import axios from "axios";
+import { Link } from "react-router-dom";
+
+// const url = process.env.REACT_APP_API_HOST;
 
 function Search() {
+  const [searchSong, setSearchSong] = useState("");
+  const [results, setResults] = useState([]);
+  const loadPlaylists = async () => {
+    try {
+      const searchurl = `/playlist/search/?title=${searchSong}`;
+      const response = await axios.get(searchurl);
+      setResults(response.data);
+    } catch (err) {
+      console.log(err);
+    }
+  };
+
   return (
     <>
       <Container fluid>
@@ -22,19 +39,37 @@ function Search() {
                     className="search-input"
                     type="text"
                     placeholder="search.."
+                    value={searchSong}
+                    onChange={(event) => {
+                      setSearchSong(event.target.value);
+                    }}
+                    onKeyPress={(event) => {
+                      if (event.key === "Enter") {
+                        loadPlaylists();
+                      }
+                    }}
                   />
+
                   <div>
-                    <h1>Album Result</h1>
-                    <div className="albumResult">
-                      <p className="album-text">Pop Music</p>
-                      <p>Sam</p>
-                      <p>2 songs</p>
-                      <div>
-                        {" "}
-                        <AiOutlineStar className="star" />
-                        <button>View</button>
-                      </div>
-                    </div>
+                    <h1>Album Result:{results.length}</h1>
+
+                    {results.map((item) => {
+                      console.log(item);
+                      return (
+                        <div key={item._id} className="albumResult">
+                          <p className="album-text">{item.title}</p>
+                          <p>{item.user.firstName}</p>
+                          <p>{item.songs.length}</p>
+                          <div>
+                            {" "}
+                            {/* <AiOutlineStar className="star" /> */}
+                            <Link to={`/app/playlist/:playlistId`}>
+                              <button className="button-playlist">View</button>
+                            </Link>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                   <h1>Song Result</h1>
                   <div className="albumResult">
