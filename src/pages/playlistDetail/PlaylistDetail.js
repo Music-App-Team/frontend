@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Link } from "react-router-dom";
-import Modal from '../../components/modal/Modal'
-import { useState } from 'react';
+import Modal from "../../components/modal/Modal";
+import { useState } from "react";
 import "./playListDetail.scss";
 import axios from 'axios';
 import { toast } from "react-toastify";
@@ -17,7 +17,7 @@ import { RiDeleteBin5Line } from 'react-icons/ri';
 
 
 function PlaylistDetail() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   const [playlistName,setPlaylistName]=useState(null)
 
@@ -64,7 +64,10 @@ function playlistname(){
         <div className="list-songs">
           <ul class="list-group list-group-horizontal ms-4 mt-5 ">
             <li class="list-group-item">Shape of you</li>
-            <li class="list-group-item"><AiFillPlayCircle /><AiFillMinusCircle /></li>
+            <li class="list-group-item">
+              <AiFillPlayCircle />
+              <AiFillMinusCircle />
+            </li>
             <li class="list-group-item">Ed Sheeran</li>
             <li class="list-group-item">Album: Divide</li>
             <li class="list-group-item">03:24</li>
@@ -73,7 +76,7 @@ function playlistname(){
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 export default PlaylistDetail;
