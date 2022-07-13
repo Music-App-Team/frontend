@@ -63,7 +63,7 @@ function Search() {
                           <div>
                             {" "}
                             {/* <AiOutlineStar className="star" /> */}
-                            <Link to={`/app/playlist/:playlistId`}>
+                            <Link to={`/app/playlist/${item._id}`}>
                               <button className="button-playlist">View</button>
                             </Link>
                           </div>
