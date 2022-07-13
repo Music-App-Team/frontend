@@ -37,6 +37,7 @@
     margin-left: 2rem;
     @include respond(phone) {
       margin-left: unset;
+
     }
     button {
       border-radius: 5px;
