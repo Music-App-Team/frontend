@@ -9,7 +9,7 @@ const CreatePlaylistModal = ({ open, onClose, onUpdate }) => {
     const [title, setTitle] = useState("")
 
     const handleSubmit = () => {
-        axios.post("http://localhost:3010/playlist/addPlaylist", { title })
+        axios.post("/playlist/addPlaylist", { title })
             .then(res => {
                 toast.success("playlist added successfully")
                 onUpdate()
