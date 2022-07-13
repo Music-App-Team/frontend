@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Form } from "react-bootstrap";
-import Modal1 from "../../components/modal/Modal1";
+import Modal1 from "../../../components/modal/Modal1";
 import axios from "axios";
 import { toast } from "react-toastify";
 import Button from "react-bootstrap/Button";
@@ -13,23 +13,52 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
   const [form, setForm] = useState({
     name:"",
     artist: "",
-    album: "",
-    lang: "",
+    album: "album1",
+    lang: "english",
     link:"",
     
   })
-  function handleSubmit(e) {
-    e.preventDefault();
+  const [loading, setLoading] =useState(false)
+  const [songFile, setSongFile] = useState();
 
-    axios.post(`/playlist/addSong/${playlistId}`,form)
+
+  function handleSubmit(e) { 
+    e.preventDefault();
+    if (!songFile) return toast.error("song file must selected");
+    setLoading(true)
+    const formData = new FormData()
+    formData.append("songFile",songFile)
+    axios.post("/playlist/uploadSong", formData).then((res) => {
+      const songPath = res.data.path;
+
+      return axios.post(`/playlist/addSong/${playlistId}`, {
+        ...form,
+        link: songPath,
+      });
+    })
+      .then((res) => {
+        toast.success("song created successfully");
+        onUpdate();
+        onClose();
+      })
+      .catch((err) => toast.error(err.response?.data?.message || err.message))
+    .finally(() => {
+      setLoading(false)
+    })
   }
 
 
+   
   function handleChangeAddSong(e) {
     const newForm = { ...form };
     newForm[e.target.name] = e.target.value;
     setForm(newForm);
     
+  }
+
+  function handleChangeFile(e) {
+    const file = e.target.files[0];
+    setSongFile(file);
   }
 
     return (
@@ -38,13 +67,14 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
         open={open}
         onClose={onClose}
         onSubmit={handleSubmit}
+        loading={loading}
       >
         <Form>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="name">
               <Form.Label>Name</Form.Label>
               <Form.Control
-                value={form.title}
+                value={form.name}
                 name="title"
                 onChange={handleChangeAddSong}
                 type="text"
@@ -84,10 +114,10 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
               <Form.Select
                 defaultValue="language"
                 value={form.lang}
-                name="language"
+                name="lang"
                 onChange={handleChangeAddSong}
               >
-                <option  value="">Choose...</option>
+                <option value="">Choose...</option>
                 <option>english</option>
                 <option>germany</option>
                 <option>persian</option>
@@ -97,7 +127,11 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
           </Row>
           <Form.Group controlId="formFileMultiple" className="mb-3">
             <Form.Label>Choose files </Form.Label>
-            <Form.Control type="file" multiple />
+            <Form.Control
+              type="file"
+              accept=".mp3"
+              onChange={handleChangeFile}
+            />
           </Form.Group>
           <h4>OR</h4>
           <Form.Label htmlFor="basic-url">Your vanity URL</Form.Label>

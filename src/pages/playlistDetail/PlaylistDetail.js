@@ -2,20 +2,18 @@ import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Modal from "../../components/modal/Modal";
 import { useState } from "react";
+import "./playListDetail.scss";
 import { BsPlay } from "react-icons/bs";
+import SongList from "./components/songList";
 import {
   AiOutlineCloudDownload,
-  AiFillPlayCircle,
-  AiFillMinusCircle,
   AiOutlineComment,
 } from "react-icons/ai";
 import { MdDriveFileRenameOutline, MdAddBox } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import AddSongModal from "./addSongModal";
 import axios from "axios";
 import { toast } from "react-toastify";
-import "./playListDetail.scss";
-
+import AddSongModal from "././components/addSongModal";
 
 function PlaylistDetail() {
   const [addSongModalOpen, setAddSongModalOpen] = useState(false);
@@ -23,7 +21,7 @@ function PlaylistDetail() {
   const [own, setOwn] = useState(false);
   const [data, setData] = useState();
 
-  useEffect(() => {
+  const getData = () => {
     axios
       .get("/playlist/getDetail/" + playlistId)
       .then((res) => {
@@ -31,9 +29,15 @@ function PlaylistDetail() {
         setOwn(res.data.own);
       })
       .catch((err) => toast.error(err.response?.data?.message || err.message));
+    
+  } 
+
+  useEffect(() => {
+    getData()
   }, [playlistId]);
 
   if (!data) return <p>loading ...</p>;
+
   return (
     <div>
       <div class="container-playlistdetail">
@@ -84,24 +88,13 @@ function PlaylistDetail() {
           )}
         </div>
         <hr className="hr" />
-        <div className="list-songs">
-          <ul class="list-group list-group-horizontal ms-4 mt-5 ">
-            <li class="list-group-item">Shape of you</li>
-            <li class="list-group-item">
-              <AiFillPlayCircle />
-              <AiFillMinusCircle />
-            </li>
-            <li class="list-group-item">Ed Sheeran</li>
-            <li class="list-group-item">Album: Divide</li>
-            <li class="list-group-item">03:24</li>
-            <li class="list-group-item">English</li>
-          </ul>
-        </div>
+        <SongList songs={data.songs} />
       </div>
       <AddSongModal
         open={addSongModalOpen}
         playlistId={playlistId}
         onClose={() => setAddSongModalOpen(false)}
+        onUpdate={getData}
       />
     </div>
   );
