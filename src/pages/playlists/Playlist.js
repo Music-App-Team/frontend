@@ -10,6 +10,7 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 function Playlist() {
+  
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [playlists, setPlaylists] = useState([]);
 
@@ -24,7 +25,7 @@ function Playlist() {
   function getPlayList() {
     axios
       .get("http://localhost:3010/playlist/getAllPlaylists")
-      .then((res) => setPlaylists(res.data))
+      .then((res) => setPlaylists([...res.data]))
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   }
 

@@ -38,18 +38,29 @@ function PlaylistDetail() {
 
   if (!data) return <p>loading ...</p>;
 
+  const [playlistName,setPlaylistName]=useState(null)
+
+  const params = useParams();
+
+ useEffect(()=>{
+function playlistname(){ 
+    
+     axios.get(`http://localhost:3010/playlist/getPlaylistById/${params.id}`)
+      .then((res) => setPlaylistName(res.data))
+      .catch((err) => toast.error(err.response?.data?.message || err.message));
+} 
+ if (params?.id){
+  playlistname()
+ }
+ },[params.id]);
+
   return (
     <div>
       <div class="container-playlistdetail">
-        <div class="playlistaction ">
-          <div>
-            {" "}
-            <img
-              src="/images/playlistdetail.png"
-              className="rounded float-start "
-              alt=""
-            />
-          </div>
+      
+       <div class="playlistaction ">
+          <div> <img src="/images/playlistdetail.png" className="rounded float-start " alt="" /></div>
+          
           <div class="playall row ">
             <p>{data.title}</p>
             <p>
