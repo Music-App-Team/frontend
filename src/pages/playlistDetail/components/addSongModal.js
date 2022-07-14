@@ -13,8 +13,8 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
   const [form, setForm] = useState({
     name:"",
     artist: "",
-    album: "album1",
-    lang: "english",
+    album: "",
+    lang: "",
     link:"",
     
   })
@@ -75,7 +75,7 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 value={form.name}
-                name="title"
+                name="name"
                 onChange={handleChangeAddSong}
                 type="text"
                 placeholder="Enter Song Name"
