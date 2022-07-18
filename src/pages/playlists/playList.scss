@@ -61,9 +61,10 @@
         .dislike,.like,.star {
           font-size: 30px;
           margin: 0.5rem;
+          
 
           a {
-            color: rgb(249, 249, 249);
+            color: rgb(249, 249, 249) ;
             background-color: transparent;
             text-decoration: none;
           }
@@ -73,6 +74,11 @@
             background-color: transparent;
             text-decoration: underline;
           }
+        }
+        .dislike,.like{
+          color: white;
+          border: none;
+          background-color: unset;
         }
       }
     }
