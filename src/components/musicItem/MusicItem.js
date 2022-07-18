@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import React, { useEffect,useState, useRef } from 'react'
 import { AiFillPlayCircle, AiFillMinusCircle, AiFillPauseCircle } from "react-icons/ai";
@@ -11,7 +12,7 @@ function MusicItem({ music }) {
   
 
 
-  useEffect(() => { 
+  useEffect(() => {
     audio.current.onplaying = () => {
       setPlaying(true)
     }
@@ -26,6 +27,7 @@ function MusicItem({ music }) {
     else audio.current.play()
   }
 
+
  const handleRemove = () => {
    axios
      .delete(`/playlist/removeSong/${playlistId}/${music._id}`)
@@ -35,6 +37,7 @@ function MusicItem({ music }) {
      })
      .catch((err) => toast.error(err.response?.data?.message || err.message));
  };
+
 
   return (
     <div>
@@ -47,7 +50,7 @@ function MusicItem({ music }) {
             <AiFillPlayCircle onClick={handlePlay} />
           )}
           {own && <AiFillMinusCircle onClick={handleRemove} />}
-        </span>
+        </span>        
         <span class="list-group-item">{music.artist}</span>
         <span class="list-group-item">{music.album}</span>
         <span class="list-group-item">{music.lang}</span>
