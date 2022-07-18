@@ -10,9 +10,10 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 function Playlist() {
-  
+
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [playlists, setPlaylists] = useState([]);
+  const [likes, setLikes] = useState([])
 
   function handleCreatePlaylist() {
     setOpenCreateModal(true);
@@ -32,10 +33,53 @@ function Playlist() {
   function handleAddToFavorite(playlistId) {
     axios.get(`/user/addPlaylistToFavorite/${playlistId}`)
       .then(res => {
-      toast.success(res.data.message)
-    }).catch((err)=> toast.error(err.response?.data?.message || err.message))
+        toast.success(res.data.message)
+      }).catch((err) => toast.error(err.response?.data?.message || err.message))
   }
 
+  // add like
+
+
+  const addLikes = async (newLikes) => {
+    try {
+      const request = await axios.patch(
+        `/user/likes`,
+        { likes: newLikes }
+      );
+      console.log(request);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const toggleLike = (id) => {
+    if (likes.find((like) => id === like)) {
+      const newLikes = likes.filter((like) => like !== id)
+      setLikes(newLikes);
+      addLikes(newLikes)
+
+    } else {
+      const newLikes = [...likes, id]
+      setLikes(newLikes);
+      addLikes(newLikes)
+
+    }
+  };
+  // git Likes
+  useEffect(() => {
+    function getLikes() {
+      console.log("getLikes called")
+      axios
+        .get("/user/getlikes")
+        .then((res) => {
+          setLikes(res.data);
+          console.log(res);
+        })
+        .catch((err) => toast.error(err.response?.data?.message || err.message));
+    }
+
+    getLikes();
+  }, []);
   return (
     <div className="container-fluid">
       <Container className="container-playlist">
@@ -63,12 +107,18 @@ function Playlist() {
                     <Link to={`/app/playlist/${item._id}`}>
                       <button className="button-playlist">View</button>
                     </Link>
-                    <a className="like" href="url">
+                    <button className="like" style={{
+                      color: likes.find((like) => item._id === like)
+                        ? "blue"
+                        : undefined,
+                    }}
+                      key={item._id}
+                      onClick={() => toggleLike(item._id)} >
                       <AiOutlineLike />
-                    </a>
-                    <a className="dislike" href="url">
+                    </button>
+                    <button className="dislike">
                       <AiOutlineDislike />
-                    </a>
+                    </button>
                     <span
                       className="star"
                       href="url"

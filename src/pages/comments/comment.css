@@ -1,0 +1,37 @@
+.container-comment {
+  margin: 0px;
+  padding: 100px;
+  color: #F2F2F2;
+  background-color: #1A1A1A;
+}
+
+.container-comment .btn {
+  background-color: #124653;
+  border: none;
+  border-radius: 15px;
+}
+
+.container-comment .btn-delete {
+  background-color: #B43A19;
+  border: none;
+  border-radius: 20px;
+  width: 120px;
+  height: 35px;
+  font-family: sans-serif;
+  line-height: normal;
+}
+
+.container-comment .textarea {
+  background-color: #D9D9D9;
+  height: 150px;
+}
+
+.container-comment p {
+  color: #f2f2f2;
+}
+
+.container-comment .hr {
+  width: 100%;
+  height: 4px;
+}
+/*# sourceMappingURL=comment.css.map */
