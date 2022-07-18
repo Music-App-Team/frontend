@@ -14,6 +14,7 @@ function Playlist() {
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [playlists, setPlaylists] = useState([]);
   const [likes, setLikes] = useState([])
+  const [dislikes, setDisLikes] = useState([])
 
   function handleCreatePlaylist() {
     setOpenCreateModal(true);
@@ -38,8 +39,6 @@ function Playlist() {
   }
 
   // add like
-
-
   const addLikes = async (newLikes) => {
     try {
       const request = await axios.patch(
@@ -80,6 +79,48 @@ function Playlist() {
 
     getLikes();
   }, []);
+
+// ADD DISLIKES
+  const addDisLikes = async (newDisLikes) => {
+    try {
+      const request = await axios.patch(
+        `/user/dislikes`,
+        { dislikes: newDisLikes }
+      );
+      console.log(request);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  const toggleDisLike = (id) => {
+    if (dislikes.find((dislike) => id === dislike)) {
+      const newDisLikes = dislikes.filter((dislike) => dislike !== id)
+      setDisLikes(newDisLikes);
+      addDisLikes(newDisLikes)
+
+    } else {
+      const newDisLikes = [...dislikes, id]
+      setDisLikes(newDisLikes);
+      addDisLikes(newDisLikes)
+
+    }
+  };
+  // git DisLikes
+  useEffect(() => {
+    function getDisLikes() {
+      console.log("getDisLikes called")
+      axios
+        .get("/user/getdislikes")
+        .then((res) => {
+          setDisLikes(res.data);
+          console.log(res);
+        })
+        .catch((err) => toast.error(err.response?.data?.message || err.message));
+    }
+
+    getDisLikes();
+  }, []);
   return (
     <div className="container-fluid">
       <Container className="container-playlist">
@@ -116,7 +157,13 @@ function Playlist() {
                       onClick={() => toggleLike(item._id)} >
                       <AiOutlineLike />
                     </button>
-                    <button className="dislike">
+                    <button className="dislike" style={{
+                      color: dislikes.find((dislike) => item._id === dislike)
+                        ? "red"
+                        : undefined,
+                    }}
+                      key={item._id}
+                      onClick={() => toggleDisLike(item._id)}>
                       <AiOutlineDislike />
                     </button>
                     <span
