@@ -5,6 +5,7 @@
 -npm i bootstrap 
 -npm i --save @fortawesome/react-fontawesome 
 -npm i --save @fortawesome/free-brands-svg-icons 
+-npm i file-saver(für download file)
 
 
 # Comment Page 
