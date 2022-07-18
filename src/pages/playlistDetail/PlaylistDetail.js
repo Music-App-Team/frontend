@@ -43,11 +43,6 @@ function PlaylistDetail() {
               Play All <BsPlay />
             </button>
           </div>
-          <div class="download">
-            <button>
-              Download <AiOutlineCloudDownload />
-            </button>
-          </div>
           {own && (
             <>
               <div class="rename">
