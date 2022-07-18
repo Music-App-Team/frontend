@@ -13,8 +13,8 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
   const [form, setForm] = useState({
     name:"",
     artist: "",
-    album: "album1",
-    lang: "english",
+    album: "",
+    lang: "",
     link:"",
     
   })
@@ -47,8 +47,6 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
     })
   }
 
-
-   
   function handleChangeAddSong(e) {
     const newForm = { ...form };
     newForm[e.target.name] = e.target.value;
@@ -75,16 +73,12 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
               <Form.Label>Name</Form.Label>
               <Form.Control
                 value={form.name}
-                name="title"
+                name="name"
                 onChange={handleChangeAddSong}
                 type="text"
                 placeholder="Enter Song Name"
               />
             </Form.Group>
-            {/*  <Form.Group as={Col} controlId="Length">
-              <Form.Label>Length (sec)</Form.Label>
-              <Form.Control type="number" placeholder="123" />
-            </Form.Group> */}
           </Row>
           <Row className="mb-3">
             <Form.Group as={Col} controlId="album">
