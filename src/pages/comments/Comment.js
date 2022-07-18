@@ -13,7 +13,7 @@ export const Comment = () => {
 
 
 
-
+    // useEffect((comments) => {
     const handleSubmit = () => {
         axios.post("http://localhost:3010/playlist/addComment", { comments })
             .then(res => {
@@ -21,7 +21,8 @@ export const Comment = () => {
                 window.location.reload()
             }).catch(err => toast.error(err.response?.data?.message || err.message))
     }
-
+    // handleSubmit()
+// },[]);
     const deletecomment = (id) => {
         axios.delete(`http://localhost:3010/playlist/deleteComment/${id}`)
             .then(res => {
@@ -32,7 +33,8 @@ export const Comment = () => {
 
     useEffect(() => {
         getComment()
-    }, []);
+
+    }, [comments]);
 
 
     
@@ -61,7 +63,7 @@ export const Comment = () => {
                                                     <span class="date "><Moment format="lll">{item.comments[0].createdAt}</Moment></span>
                                                 </div>
                                                 <div class="mt-2">
-                                                    <p class="comment-text">{item.comments[0].text}</p>
+                                                    <p class="mx-0">{item.comments[0].text}</p>
                                                     <div class="mt-2 text-right"><button class="btn-delete  float-end btn-primary btn-sm shadow-none" type="button" onClick={()=>deletecomment(item._id)}>Delete</button></div>
                                                 </div>
                                             </div><hr className="hr" />
@@ -73,7 +75,7 @@ export const Comment = () => {
                     }) : undefined}
                     <div class="d-flex flex-column p-2">
                         <div class="d-flex flex-row align-items-start"><textarea placeholder="Review" class="form-control ml-1 shadow-none textarea" value={comments.text} onChange={(e) => setComments({ text: e.target.value })}></textarea></div>
-                        <div class="mt-2 text-right"><button class="btn  float-end btn-primary btn-sm shadow-none" type="button" onClick={handleSubmit}  >Subment</button></div>
+                        <div class="mt-2 text-right"><button class="btn  float-end btn-primary btn-sm shadow-none" type="button" onClick={handleSubmit}  >Submit</button></div>
                     </div>
                 </div>
             </div>

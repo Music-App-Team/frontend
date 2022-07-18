@@ -1,0 +1,89 @@
+.main-div {
+  height: 650px;
+  background-color: #1a1a1a;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.main-div .col-md-12 {
+  color: whitesmoke;
+}
+
+.main-div p {
+  margin: 0.5rem !important;
+}
+
+.main-div h1 {
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media (max-width: 1150px) {
+  .main-div {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+}
+
+.search-input {
+  background-color: grey;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+}
+
+.albumResult {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 40px;
+  width: 90%;
+  background-color: grey;
+  border-radius: 5px;
+}
+
+.albumResult .album-text {
+  margin-left: 2rem;
+}
+
+.albumResult .star {
+  font-size: 2rem;
+  margin-right: 50px;
+  color: #1a1a1a;
+}
+
+.albumResult button {
+  border-radius: 8px;
+  margin-right: 1rem;
+  width: 150px;
+  background-color: #35626f;
+}
+
+p {
+  color: black;
+}
+
+.play {
+  margin-right: 50px;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+
+.langSong {
+  margin-right: 50px;
+}
+/*# sourceMappingURL=search.css.map */
