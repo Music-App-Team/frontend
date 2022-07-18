@@ -1,12 +1,17 @@
+import axios from 'axios';
 import React, { useEffect,useState, useRef } from 'react'
 import { AiFillPlayCircle, AiFillMinusCircle, AiFillPauseCircle } from "react-icons/ai";
+import { toast } from 'react-toastify';
+import { usePlaylistContext } from '../../context/PlaylistContext';
 
 function MusicItem({ music }) {
   const audio = useRef(new Audio(music.link));
-  const [playing ,setPlaying] = useState(false);
+  const [playing, setPlaying] = useState(false);
+  const { own, playlistId, loadPlaylistData } = usePlaylistContext();
+  
 
 
-  useEffect(() => {
+  useEffect(() => { 
     audio.current.onplaying = () => {
       setPlaying(true)
     }
@@ -21,6 +26,16 @@ function MusicItem({ music }) {
     else audio.current.play()
   }
 
+ const handleRemove = () => {
+   axios
+     .delete(`/playlist/removeSong/${playlistId}/${music._id}`)
+     .then((res) => {
+       loadPlaylistData();
+       toast.success("removed successfully");
+     })
+     .catch((err) => toast.error(err.response?.data?.message || err.message));
+ };
+
   return (
     <div>
       <div class="list-group list-group-horizontal ms-4 mt-5 ">
@@ -31,8 +46,8 @@ function MusicItem({ music }) {
           ) : (
             <AiFillPlayCircle onClick={handlePlay} />
           )}
-          <AiFillMinusCircle />
-        </span> 
+          {own && <AiFillMinusCircle onClick={handleRemove} />}
+        </span>
         <span class="list-group-item">{music.artist}</span>
         <span class="list-group-item">{music.album}</span>
         <span class="list-group-item">{music.lang}</span>
