@@ -1,3 +1,4 @@
+
 import axios from 'axios';
 import React, { useEffect,useState, useRef } from 'react'
 import { AiFillPlayCircle, AiFillMinusCircle, AiFillPauseCircle, AiOutlineDownload } from "react-icons/ai";
@@ -40,7 +41,7 @@ function MusicItem({ music }) {
   const handleDownload = () => {
     saveAs(music.link, `${music.name}.mp3`);
   }
-  
+
 
   return (
     <div>
@@ -53,11 +54,11 @@ function MusicItem({ music }) {
             <AiFillPlayCircle onClick={handlePlay} />
           )}
           {own && <AiFillMinusCircle onClick={handleRemove} />}
-        </span>
+        </span>        
         <span class="list-group-item">{music.artist}</span>
         <span class="list-group-item">{music.album}</span>
         <span class="list-group-item">{music.lang}</span>
-        <span class="list-group-item"> <AiOutlineDownload   onClick={handleDownload}/></span>
+        <span class="list-group-item"> <AiOutlineDownload onClick={handleDownload}/></span>
       </div>
     </div>
   );
