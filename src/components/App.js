@@ -10,6 +10,7 @@ import Playlist from "../pages/playlists/Playlist";
 import PlaylistDetail from "../pages/playlistDetail/PlaylistDetail";
 import { useUserInfoContext } from "../context/UserInfoContext";
 import Profile from "./profile/Profile";
+import { PlaylistContextProvider } from "../context/PlaylistContext";
 
 function App() {
   const { isAuthenticated } = useUserInfoContext();
@@ -17,26 +18,25 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route path="/login" element={isAuthenticated ? <Navigate to="/app" /> : <Login />} />
-        <Route path="/SignUp" element={isAuthenticated ? <Navigate to="/app" /> : <SignUp />} />
-        <Route path="/" element={<Landing />} />
-        <Route path="/app/*" element={ isAuthenticated ? ( <Layout>
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/app" /> : <Login />}/>
+        <Route path="/SignUp" element={isAuthenticated ? <Navigate to="/app" /> : <SignUp />}/>
+        <Route path="/" element={<Landing />} /><Route path="/app/*"element={isAuthenticated ? (<Layout>
                 <Routes>
                   <Route path="search" element={<Search />} />
                   <Route path="comment" element={<Comment />} />
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="playlists" element={<Playlist />} />
-                  <Route path="playlist/:playlistId" element={<PlaylistDetail />} />
+                  <Route path="playlist/:playlistId" element={
+                      <PlaylistContextProvider>
+                        <PlaylistDetail />
+                      </PlaylistContextProvider>}/>
                   <Route path="playlists" element={<Playlist />} />
-                  <Route path="profile" element={<Profile/>}/>
+                  <Route path="profile" element={<Profile />} />
                   <Route path="*" element={<Navigate to="/app/dashboard" />} />
                 </Routes>
               </Layout>
             ) : (
-              <Navigate to={"/login"} />
-            )
-          }
-        />
+              <Navigate to={"/login"} />)}/>
         <Route path="*" element={<Navigate to="/app/dashboard" />} />
       </Routes>
     </div>

@@ -1,70 +1,40 @@
 import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
-import Modal from "../../components/modal/Modal";
 import { useState } from "react";
 import "./playListDetail.scss";
 import { BsPlay } from "react-icons/bs";
 import SongList from "./components/songList";
-import {
-  AiOutlineCloudDownload,
-  AiOutlineComment,
-} from "react-icons/ai";
+import { AiOutlineCloudDownload, AiOutlineComment} from "react-icons/ai";
 import { MdDriveFileRenameOutline, MdAddBox } from "react-icons/md";
 import { RiDeleteBin5Line } from "react-icons/ri";
-import axios from "axios";
-import { toast } from "react-toastify";
 import AddSongModal from "././components/addSongModal";
+import { usePlaylistContext } from "../../context/PlaylistContext";
 
 function PlaylistDetail() {
   const [addSongModalOpen, setAddSongModalOpen] = useState(false);
   const { playlistId } = useParams();
-  const [own, setOwn] = useState(false);
-  const [data, setData] = useState();
 
-  const getData = () => {
-    axios
-      .get("/playlist/getDetail/" + playlistId)
-      .then((res) => {
-        setData(res.data.playlist);
-        setOwn(res.data.own);
-      })
-      .catch((err) => toast.error(err.response?.data?.message || err.message));
-    
-  } 
+  const {playlistDetail, own, songs, loadPlaylistData} = usePlaylistContext()
 
-  useEffect(() => {
-    getData()
-  }, [playlistId]);
+  if (!playlistDetail) return <p>loading ...</p>;
 
-  if (!data) return <p>loading ...</p>;
-/* 
-  const [playlistName,setPlaylistName]=useState(null)
 
-  const params = useParams(); */
-/* 
- useEffect(()=>{
-function playlistname(){ 
-    
-     axios.get(`http://localhost:3010/playlist/getPlaylistById/${params.id}`)
-      .then((res) => setPlaylistName(res.data))
-      .catch((err) => toast.error(err.response?.data?.message || err.message));
-} 
- if (params?.id){
-  playlistname()
- }
- },[params.id]); */
 
   return (
     <div>
       <div class="container-playlistdetail">
-      
-       <div class="playlistaction ">
-          <div> <img src="/images/playlistdetail.png" className="rounded float-start " alt="" /></div>
-          
+        <div class="playlistaction ">
+          <div>
+            <img
+              src="/images/playlistdetail.png"
+              className="rounded float-start "
+              alt=""
+            />
+          </div>
           <div class="playall row ">
-            <p>{data.title}</p>
+            <p>{playlistDetail.title}</p>
             <p>
-              {data.songs.length} songs
+              {songs.length} songs
               <Link className="link" to="/app/comment">
                 <AiOutlineComment />
               </Link>
@@ -99,13 +69,13 @@ function playlistname(){
           )}
         </div>
         <hr className="hr" />
-        <SongList songs={data.songs} />
+        <SongList />
       </div>
       <AddSongModal
         open={addSongModalOpen}
         playlistId={playlistId}
         onClose={() => setAddSongModalOpen(false)}
-        onUpdate={getData}
+        onUpdate={loadPlaylistData}
       />
     </div>
   );
