@@ -77,7 +77,6 @@ function Search() {
                       <FaPlayCircle className="search__play" />
                       <FaMinus className="search__play" />
                     </div>
-
                     <p>Ed Sheeran</p>
                     <button>Pop Music</button>
                     <p>06:09</p>

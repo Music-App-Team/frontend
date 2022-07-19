@@ -45,7 +45,6 @@ function Playlist() {
         `/user/likes`,
         { likes: newLikes }
       );
-      console.log(request);
     } catch (error) {
       console.log(error);
     }
@@ -67,12 +66,10 @@ function Playlist() {
   // git Likes
   useEffect(() => {
     function getLikes() {
-      console.log("getLikes called")
       axios
         .get("/user/getlikes")
         .then((res) => {
           setLikes(res.data);
-          console.log(res);
         })
         .catch((err) => toast.error(err.response?.data?.message || err.message));
     }
@@ -87,9 +84,7 @@ function Playlist() {
         `/user/dislikes`,
         { dislikes: newDisLikes }
       );
-      console.log(request);
     } catch (error) {
-      console.log(error);
     }
   };
 
@@ -109,12 +104,10 @@ function Playlist() {
   // git DisLikes
   useEffect(() => {
     function getDisLikes() {
-      console.log("getDisLikes called")
       axios
         .get("/user/getdislikes")
         .then((res) => {
           setDisLikes(res.data);
-          console.log(res);
         })
         .catch((err) => toast.error(err.response?.data?.message || err.message));
     }
