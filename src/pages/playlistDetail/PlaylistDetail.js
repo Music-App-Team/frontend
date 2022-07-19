@@ -1,4 +1,4 @@
-import { Link,  useParams } from "react-router-dom";
+import { Link,  Navigate,  useNavigate,  useParams } from "react-router-dom";
 import { useState } from "react";
 import "./playListDetail.scss";
 import { BsPlay } from "react-icons/bs";
@@ -17,7 +17,8 @@ function PlaylistDetail() {
   const [inRenameStatus, setInRenameStatus] = useState(false);
   const [renameText, setRenameText] = useState("");
   const { playlistDetail, own, songs, loadPlaylistData } =usePlaylistContext();
-
+  const navigate = useNavigate();
+  
   if (!playlistDetail) return <p>loading ...</p>;
 
   const handleRenameClick = () => {
@@ -36,6 +37,15 @@ function PlaylistDetail() {
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   };
 
+  const handleDeletePlaylist = () => {
+    axios
+      .delete("/playlist/deletePlaylist/"+ playlistId)
+      .then((res) => {
+        toast.success("playlist removed successfully")
+        navigate("/app/playlists")
+      })
+      .catch((err) => toast.error(err.response?.data?.message || err.message));
+  }
 
   return (
     <div>
@@ -74,7 +84,7 @@ function PlaylistDetail() {
                     </button>
                   </div>
                   <div class="delete">
-                    <button >
+                    <button onClick={handleDeletePlaylist} >
                       Delete <RiDeleteBin5Line />
                     </button>
                   </div>
