@@ -75,7 +75,7 @@ export const Comment = () => {
                     }) : undefined}
                     <div class="d-flex flex-column p-2">
                         <div class="d-flex flex-row align-items-start"><textarea placeholder="Review" class="form-control ml-1 shadow-none textarea" value={comments.text} onChange={(e) => setComments({ text: e.target.value })}></textarea></div>
-                        <div class="mt-2 text-right"><button class="btn  float-end btn-primary btn-sm shadow-none" type="button" onClick={handleSubmit}  >Submit</button></div>
+                        <div class="mt-2 text-right"><button class="btn  float-end btn-primary btn-sm shadow-none" type="button" onClick={handleSubmit}   >Submit</button></div>
                     </div>
                 </div>
             </div>
