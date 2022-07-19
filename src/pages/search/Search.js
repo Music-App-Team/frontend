@@ -4,7 +4,6 @@ import "./search.scss";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-// import { AiOutlineStar } from "react-icons/ai";
 import { FaPlayCircle } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import axios from "axios";
@@ -62,7 +61,6 @@ function Search() {
                           <p>{item.songs.length}</p>
                           <div>
                             {" "}
-                            {/* <AiOutlineStar className="star" /> */}
                             <Link to={`/app/playlist/${item._id}`}>
                               <button className="button-playlist">View</button>
                             </Link>
@@ -76,8 +74,8 @@ function Search() {
                     <p className="album-text">Shape of you</p>
                     <div className="icon-result">
                       {" "}
-                      <FaPlayCircle className="play" />
-                      <FaMinus className="play" />
+                      <FaPlayCircle className="search__play" />
+                      <FaMinus className="search__play" />
                     </div>
 
                     <p>Ed Sheeran</p>
