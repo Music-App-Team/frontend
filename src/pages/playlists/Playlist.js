@@ -26,7 +26,7 @@ function Playlist() {
 
   function getPlayList() {
     axios
-      .get("http://localhost:3010/playlist/getAllPlaylists")
+      .get("/playlist/getAllPlaylists")
       .then((res) => setPlaylists([...res.data]))
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   }

@@ -15,7 +15,7 @@ function Login() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3010/auth/login", { email, password })
+      .post("/auth/login", { email, password })
       .then((res) => {
         toast.success("login successfully");
         const token = res.data.token;

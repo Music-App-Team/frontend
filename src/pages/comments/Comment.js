@@ -16,7 +16,7 @@ export const Comment = () => {
 
 
     const handleSubmit = () => {
-        axios.post("http://localhost:3010/playlist/addComment", { comments })
+        axios.post("/playlist/addComment", { comments })
             .then(res => {
                 toast.success("comment added successfully")
             }).catch(err => toast.error(err.response?.data?.message || err.message))
@@ -24,7 +24,7 @@ export const Comment = () => {
 
 
     const deletecomment = (id) => {
-        axios.delete(`http://localhost:3010/playlist/deleteComment/${id}`)
+        axios.delete(`/playlist/deleteComment/${id}`)
             .then(res => {
                 toast.success("comment deleted successfully")
             }).catch(err => toast.error(err.response?.data?.message || err.message))
@@ -33,7 +33,7 @@ export const Comment = () => {
     useEffect(() => {
         function getComment() {
             axios
-                .get("http://localhost:3010/playlist/getAllComments")
+                .get("/playlist/getAllComments")
                 .then((res) => setGetComments(res.data))
                 .catch((err) => toast.error(err.response?.data?.message || err.message));
         }
