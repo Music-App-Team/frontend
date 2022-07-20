@@ -11,6 +11,7 @@ import PlaylistDetail from "../pages/playlistDetail/PlaylistDetail";
 import { useUserInfoContext } from "../context/UserInfoContext";
 import Profile from "./profile/Profile";
 import { PlaylistContextProvider } from "../context/PlaylistContext";
+import About from "../pages/about/About";
 
 function App() {
   const { isAuthenticated } = useUserInfoContext();
@@ -20,7 +21,8 @@ function App() {
       <Routes>
         <Route path="/login" element={isAuthenticated ? <Navigate to="/app" /> : <Login />}/>
         <Route path="/SignUp" element={isAuthenticated ? <Navigate to="/app" /> : <SignUp />}/>
-        <Route path="/" element={<Landing />} /><Route path="/app/*"element={isAuthenticated ? (<Layout>
+        <Route path="about" element={<About />} />
+        <Route path="/" element={<Landing />} /><Route path="/app/*"element={isAuthenticated ? (<Layout>  
                 <Routes>
                   <Route path="search" element={<Search />} />
                   <Route path="comment" element={<Comment />} />
