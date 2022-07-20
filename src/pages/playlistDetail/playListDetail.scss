@@ -1,0 +1,89 @@
+:root {
+  --color: #b6b6b6;
+}
+
+.container-playlistdetail {
+  // min-height: 100vh;
+  min-height: 650px;
+  height: 100%;
+  background-color: #1a1a1a;
+  padding-top: 20px;
+  padding-left: 20px;
+}
+p {
+  font-size: 1rem;
+  margin: unset;
+}
+
+.playlistaction {
+  display: flex;
+  flex-direction: row;
+  color: var(--color);
+  gap: 2rem;
+
+  input {
+    background-color: black;
+    color: white;
+    border: unset;
+    font-size: 1.5rem;
+  }
+  h4 {
+    font-size: 35px;
+    margin: unset;
+  }
+  img {
+    width: 150px;
+    height: 150px;
+  }
+  .playall {
+    display: inline-block;
+    margin-left: 0px;
+    p {
+      color: var(--color);
+    }
+  }
+  button {
+    background-color: transparent;
+    border: none;
+    color: #e2cfcd;
+    font-size: 1rem;
+  }
+  .link {
+    color: var(--color);
+  }
+}
+
+.hr {
+  // color: var(--color);
+  background-color: white;
+}
+
+.list-songs {
+    display: flex;
+    justify-content: center;
+    gap : 1rem;
+    flex-direction: column;
+    background-color: transparent;
+    li.list-group-item {
+      background-color: var(--color);
+      width: 200px;
+  }
+}
+
+.detail__actions {
+  display: flex;
+  gap: 3rem;
+}
+
+.detail__comment {
+  display: flex;
+  gap: 1rem;
+  color: white;
+}
+
+.detail__rows {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: space-between;
+}

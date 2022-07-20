@@ -1,0 +1,86 @@
+
+ .container-fluid {
+  background-color: #1a1a1a;
+
+  .container-playlist {
+    height: 650px;
+    background-color: #1a1a1a;
+
+    .header-playlist {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      .playlist-h1 {
+        color: #1a1a1a;
+        font-size: 2rem;
+        margin-bottom: 3rem;
+      }
+
+      .button-create {
+        font-family: "Montserrat", sans-serif;
+        font-size: 1rem;
+        color: #c8d1d6;
+        text-decoration: none;
+        background-color: #821d05;
+        border-radius: 8px;
+        margin-right: 1rem;
+        margin-bottom: 1rem;
+        width: 120px;
+      }
+    }
+
+    .playlist-table {
+      color: rgb(255, 255, 255);
+      font-size: 1rem;
+      text-align: center;
+      margin-left: 2rem;
+
+      th,
+      td {
+        border-bottom: none;
+        padding: 0.5rem;
+        
+      }
+
+      .container-action {
+        margin-left: 2rem;
+
+        .button-playlist {
+          font-family: "Montserrat", sans-serif;
+          font-size: 0.8rem;
+          color: #dce3e6;
+          text-decoration: none;
+          background-color: #124653;
+          border-radius: 8px;
+          margin-right: 1rem;
+          padding: 0.2rem 01rem;
+
+        }
+
+        .dislike,.like,.star {
+          font-size: 30px;
+          margin: 0.5rem;
+          
+
+          a {
+            color: rgb(249, 249, 249) ;
+            background-color: transparent;
+            text-decoration: none;
+          }
+
+          a:hover {
+            color: #d76b45;
+            background-color: transparent;
+            text-decoration: underline;
+          }
+        }
+        .dislike,.like{
+          color: white;
+          border: none;
+          background-color: unset;
+        }
+      }
+    }
+  }
+}

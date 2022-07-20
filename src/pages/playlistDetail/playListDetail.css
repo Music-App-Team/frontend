@@ -1,0 +1,91 @@
+:root {
+  --color: #b6b6b6;
+}
+
+.container-playlistdetail {
+  height: 650px;
+  background-color: #1a1a1a;
+  padding-top: 20px;
+}
+
+p {
+  font-size: 1rem;
+  margin-left: -7rem;
+}
+
+.playlistaction {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  color: var(--color);
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  font-size: 35px;
+}
+
+.playlistaction div {
+  margin-left: 50px;
+  -ms-flex-item-align: end;
+      align-self: flex-end;
+}
+
+.playlistaction img {
+  width: 150px;
+  height: 150px;
+  margin-left: -19rem;
+}
+
+.playlistaction .playall {
+  display: inline-block;
+  margin-left: 0px;
+}
+
+.playlistaction .playall p {
+  color: var(--color);
+}
+
+.playlistaction button {
+  background-color: transparent;
+  border: none;
+  color: #e2cfcd;
+  font-size: 1rem;
+}
+
+.playlistaction .link {
+  color: var(--color);
+}
+
+.playlistaction .play {
+  margin-left: 0px;
+  text-align: left;
+}
+
+.playlistaction p {
+  margin-top: 15%;
+  margin-bottom: 0px;
+}
+
+.hr {
+  background-color: white;
+}
+
+.list-songs ul {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: transparent;
+}
+
+.list-songs ul li.list-group-item {
+  background-color: var(--color);
+  width: 200px;
+}
+/*# sourceMappingURL=playListDetail.css.map */

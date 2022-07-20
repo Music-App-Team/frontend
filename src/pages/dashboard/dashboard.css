@@ -1,0 +1,131 @@
+/* .container-fluid{
+    background-color:#1a1a1a ;
+
+    .container-playlist {
+        height: 650px;
+        background-color: #1a1a1a;
+        margin: 3rem;
+        margin-left: 5rem;
+
+    .playlist-h1{
+        color: rgb(255, 255, 255);
+        font-size: 3rem;
+        margin-bottom: 3rem;
+    }
+
+    .playlist-table {
+        color: rgb(255, 255, 255);
+        font-size: 2rem;
+        text-align: center;
+        margin-left: 2rem;
+
+        th,td{
+            border-bottom:none;
+            padding: 0.5rem
+        }
+
+        .container-action{
+            margin-left: 2rem;
+            .button-playlist{
+                font-family: "Montserrat", sans-serif;
+                font-size: 18px;
+                color: #dce3e6;
+                text-decoration: none;
+                background-color: #124653;
+                border-radius: 8px;
+                margin-right: 1rem;
+                width: 120px;
+            }
+            .trash{
+                font-size: 22px;
+            }
+             a{
+                color: rgb(249, 249, 249);
+                background-color: transparent;
+                text-decoration: none;
+              }
+             a:hover {
+                color: #D76B45;
+                background-color: transparent;
+                text-decoration: underline;
+              }
+        }
+    }
+}
+}
+
+
+ */
+.container-fluid {
+  background-color: #1a1a1a;
+}
+
+.container-fluid .container-dashboard {
+  height: 650px;
+  background-color: #1a1a1a;
+  color: #1a1a1a;
+}
+
+.container-fluid .container-dashboard .dashboard-h1 {
+  color: #1a1a1a;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+
+.container-fluid .container-dashboard .button-create {
+  font-family: "Montserrat", sans-serif;
+  font-size: 1rem;
+  color: #c8d1d6;
+  text-decoration: none;
+  background-color: #821d05;
+  border-radius: 8px;
+  margin-right: 1rem;
+  margin-bottom: 1rem;
+  width: 120px;
+}
+
+.container-fluid .container-dashboard .playlist-table {
+  color: white;
+  font-size: 1rem;
+  text-align: center;
+  margin-left: 2rem;
+}
+
+.container-fluid .container-dashboard .playlist-table th,
+.container-fluid .container-dashboard .playlist-table td {
+  border-bottom: none;
+  padding: 0.5rem;
+}
+
+.container-fluid .container-dashboard .playlist-table .container-action {
+  margin-left: 2rem;
+}
+
+.container-fluid .container-dashboard .playlist-table .container-action .button-playlist {
+  font-family: "Montserrat", sans-serif;
+  font-size: 0.8rem;
+  color: #dce3e6;
+  text-decoration: none;
+  background-color: #124653;
+  border-radius: 8px;
+  margin-right: 1rem;
+  padding: 0.2rem 01rem;
+}
+
+.container-fluid .container-dashboard .playlist-table .container-action .trash {
+  font-size: 30px;
+  margin: 0.5rem;
+}
+
+.container-fluid .container-dashboard .playlist-table .container-action .trash a {
+  color: #f9f9f9;
+  background-color: transparent;
+  text-decoration: none;
+}
+
+.container-fluid .container-dashboard .playlist-table .container-action .trash a:hover {
+  color: #d76b45;
+  background-color: transparent;
+  text-decoration: underline;
+}
+/*# sourceMappingURL=dashboard.css.map */

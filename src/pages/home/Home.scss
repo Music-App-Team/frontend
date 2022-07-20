@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Bungee+Shade&family=spotify-circular");
+
+@import '../../assets/mixins';
+
+body {
+  background-color: #1a1a1a;
+
+
+  .home-container {
+    display: grid;
+    grid-template-rows: 1fr 1fr ;
+    width:100%;
+    height: 700px;
+;
+    margin-top: 0;
+    background-image: url("../../images/background.jpg");
+    background-size: cover;
+    background-position: 70% centercd ;
+    font-family: spotify-circular, Helvetica, Arial, sans-serif;
+
+    img {
+      width: 100%;
+      opacity: 0.4;
+      z-index: 2;
+    }
+
+    .slogan {
+      letter-spacing: 0.25px;
+      align-self: center;
+      font-weight: 600;
+      font-size: 3.5rem;
+      text-align: center;
+      line-height: 1.2;
+      text-shadow: 1px 1px 3px black;
+      color: white;
+      font-size: 3.5rem;
+      width: 50%;
+      text-align: left;
+      margin-top: 9rem;
+      margin-left: 7rem;
+      text-align: left;
+
+     @include respond(tep-land){
+      font-size: 2.5rem;
+     }
+
+
+     @include respond(tep-port){
+      font-size: 1.8rem;
+      margin-left: 3rem;
+      width: 80%;
+      line-height: 3rem;
+      text-align: center;
+     }
+    }
+
+    .button {
+      background-color: aliceblue;
+      text-align: center;
+      align-self: start;
+      margin-bottom: 15rem;
+      padding: 1.2rem 2.5rem;
+      border-radius: 35px;
+      border: none;
+      color: #256b7c;
+      font-size: 1.5rem;
+      font-weight: bold;
+      box-shadow: 1px 1px 6px 1px#072026;
+
+      @include respond(tab-port){
+        font-size: 1.2rem;
+        border-radius: 0.9rem;
+        padding: 0.5rem  2rem;
+      }
+    }
+    .button:hover {
+      background-color: rgb(205, 208, 211);
+    }
+    .link {
+      align-self: center;
+      margin-left: 7rem;
+      margin-top: 5rem;
+
+      @include respond(tab-port){
+        margin-left: 3rem;
+        justify-self: center;
+      }
+      @include respond(phone){
+        margin-left: unset;
+      }
+    }
+  }
+}

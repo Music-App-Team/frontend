@@ -1,0 +1,65 @@
+// @import "../../assets/mixins";
+.main-div {
+  height: 650px;
+  background-color: #1a1a1a;
+  display: flex;
+  flex-direction: row;
+  .col-md-12 {
+    color: whitesmoke;
+  }
+  p {
+    margin: 0.5rem !important;
+  }
+  h1 {
+    font-size: 1rem;
+    margin-top: 1rem;
+  }
+
+  @media (max-width: 1150px) {
+    flex-direction: column;
+  }
+}
+
+.search-input {
+  background-color: grey;
+  width: 90%;
+  border: none;
+  border-radius: 5px;
+  height: 40px;
+}
+.albumResult {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 40px;
+  width: 90%;
+  background-color: grey;
+  border-radius: 5px;
+
+  .album-text {
+    margin-left: 2rem;
+  }
+  .star {
+    font-size: 2rem;
+    margin-right: 50px;
+    color: #1a1a1a;
+  }
+  button {
+    border-radius: 8px;
+    margin-right: 1rem;
+    width: 150px;
+    background-color: #35626f;
+  }
+}
+p {
+  color: black;
+}
+
+.search__play {
+  margin-right: 50px;
+  font-size: 1.5rem;
+  color: #1a1a1a;
+}
+.langSong {
+  margin-right: 50px;
+}
