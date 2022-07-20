@@ -47,7 +47,6 @@ function PlaylistDetail() {
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   }
 
-
   return (
     <div>
       <div class="container-playlistdetail">
