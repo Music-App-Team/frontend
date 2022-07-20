@@ -10,7 +10,7 @@ import axios from "axios";
 import { UserInfoContextProvider } from "./context/UserInfoContext";
 
 axios.defaults.headers.common.token = localStorage.getItem("token");
-axios.defaults.baseURL = "http://localhost:3010";
+axios.defaults.baseURL = process.env.REACT_APP_API_HOST;
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
