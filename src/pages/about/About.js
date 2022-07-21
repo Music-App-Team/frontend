@@ -18,34 +18,47 @@ function About() {
           </p>
           <p className="p-about">
             Vier Entwickler sind wir und zwar:
-            <li className="li-about">Aisha :</li>
-            <a href="https://github.com/aisha2000-hub">
-              <li>GitHub</li>
-            </a>
-            <a href="https://www.linkedin.com/in/aisha-noori/">
-              <li>LinkedIn</li>
-            </a>
-            <li className="li-about">Veaceslav :</li>
-            <a href="https://github.com/slavablack">
-              <li>GitHub</li>
-            </a>
-            <a href="https://www.linkedin.com/in/veaceslav-ciornii/">
-              <li>LinkedIn</li>
-            </a>
-            <li className="li-about">Jaber :</li>
-            <a href="https://github.com/jaber-1988">
-              <li>GitHub</li>
-            </a>
-            <a href="https://www.linkedin.com/in/jaber-abdullah-a02922239/">
-              <li>LinkedIn</li>
-            </a>
-            <li className="li-about">Mazen :</li>
-            <a href="https://github.com/Mazen88cdi">
-              <li>GitHub</li>
-            </a>
-            <a href="https://www.linkedin.com/in/mazen-altaha-4590971b9/">
-              <li>LinkedIn</li>
-            </a>
+            <div className="li-name">
+              <div className="li-a">
+                <li className="li-about">Aisha :</li>
+                <a href="https://github.com/aisha2000-hub">
+                  <li>GitHub -</li>
+                </a>
+                <a href="https://www.linkedin.com/in/aisha-noori/">
+                  <li>LinkedIn</li>
+                </a>
+              </div>
+
+              <div className="li-a">
+                <li className="li-about">Veaceslav :</li>
+                <a href="https://github.com/slavablack">
+                  <li>GitHub -</li>
+                </a>
+                <a href="https://www.linkedin.com/in/veaceslav-ciornii/">
+                  <li>LinkedIn</li>
+                </a>
+              </div>
+
+              <div className="li-a">
+                <li className="li-about">Jaber :</li>
+                <a href="https://github.com/jaber-1988">
+                  <li>GitHub -</li>
+                </a>
+                <a href="https://www.linkedin.com/in/jaber-abdullah-a02922239/">
+                  <li>LinkedIn</li>
+                </a>
+              </div>
+              <div className="li-a">
+                <li className="li-about">Mazen :</li>
+                <a href="https://github.com/Mazen88cdi">
+                  <li>GitHub -</li>
+                </a>
+
+                <a href="https://www.linkedin.com/in/mazen-altaha-4590971b9/">
+                  <li>LinkedIn</li>
+                </a>
+              </div>
+            </div>
           </p>
           <p className="p-about">
             Unsere “Musicfy” haben wir entwickelt mit folgende Frameworks:
