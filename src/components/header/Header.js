@@ -14,7 +14,7 @@ function Header() {
 
   return (
     <div className="header">
-      <img id="logo" src="/images/Logo.png" alt="Logo" />
+       <Link to={"/login"}><img id="logo" src="/images/Logo.png" alt="Logo" /></Link>
       <div className="main">
         <Link to="/app/profile">
           {!userInfo.image ? (
