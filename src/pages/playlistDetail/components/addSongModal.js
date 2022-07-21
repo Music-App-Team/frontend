@@ -24,6 +24,8 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
 
   function handleSubmit(e) { 
     e.preventDefault();
+     if (!form.name || !form.artist || !form.album || !form.lang)
+       return toast.error("fill all fields");
     if (!songFile) return toast.error("song file must selected");
     setLoading(true)
     const formData = new FormData()

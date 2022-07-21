@@ -1,9 +1,13 @@
 body {
-  min-height: 100vh;
+  height: 100vh;
 }
 .layout {
   min-height: 100vh;
-  display: grid;
-  grid-template-columns: max-content 1fr;
-  grid-template-rows: max-content 1fr max-content;
+  padding-left: 16rem;
+  padding-top: 4rem;
+  background-color: #1a1a1a;
+  main {
+    overflow-y: auto;
+    height: calc(100vh - 4rem /* header height*/);
+  }
 }

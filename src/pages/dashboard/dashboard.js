@@ -32,45 +32,40 @@ function Dashboard() {
   }
 
   return (
-    <div className="container-fluid">
-      <Container className="container-dashboard">
-        <h1 className="playlist-h1">Home</h1>
-        <Table className="playlist-table">
-          <thead>
+    <Container className="container-dashboard">
+      <h1 className="playlist-h1">Home</h1>
+      <Table className="playlist-table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Author</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {playlists.map((item) => (
             <tr>
-              <th>Name</th>
-              <th>Author</th>
-              <th>Actions</th>
+              <td>{item.title}</td>
+              <td>{item.user?.firstName}</td>
+              <td>
+                <div className="container-action">
+                  {" "}
+                  <Link to={`/app/playlist/${item._id}`}>
+                    <button className="button-playlist">Open</button>
+                  </Link>
+                  <span
+                    onClick={() => handleRemovePlaylistFromFavorite(item._id)}
+                  >
+                    <CgTrashEmpty className="trash" />
+                  </span>
+                </div>
+              </td>
             </tr>
-          </thead>
-          <tbody>
-            {playlists.map((item) => (
-              <tr>
-                <td>{item.title}</td>
-                <td>{item.user?.firstName}</td>
-                <td>
-                  <div className="container-action">
-                    {" "}
-                    <Link to={`/app/playlist/${item._id}`}>
-                      <button className="button-playlist">Open</button>
-                    </Link>
-                    <span
-                      onClick={() => handleRemovePlaylistFromFavorite(item._id)}
-                    >
-                      <CgTrashEmpty className="trash" />
-                    </span>
-                  </div>
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </Table>
-      </Container>
-    </div>
+          ))}
+        </tbody>
+      </Table>
+    </Container>
   );
 }
 
 export default Dashboard;
-
-
-

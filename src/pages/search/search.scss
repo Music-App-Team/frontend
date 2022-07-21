@@ -1,11 +1,18 @@
 // @import "../../assets/mixins";
-.main-div {
-  height: 650px;
+.searchContainer {
+  height: 100%;
   background-color: #1a1a1a;
   display: flex;
   flex-direction: row;
+  padding: 2rem;
   .col-md-12 {
     color: whitesmoke;
+  }
+  .searchSongResult {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 2rem;
   }
   p {
     margin: 0.5rem !important;
