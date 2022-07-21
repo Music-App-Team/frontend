@@ -10,6 +10,8 @@ import Playlist from "../pages/playlists/Playlist";
 import PlaylistDetail from "../pages/playlistDetail/PlaylistDetail";
 import { useUserInfoContext } from "../context/UserInfoContext";
 import { PlaylistContextProvider } from "../context/PlaylistContext";
+import About from "../pages/about/About";
+
 import Profile from "../pages/profile/Profile";
 function App() {
   const { isAuthenticated } = useUserInfoContext();
@@ -17,20 +19,10 @@ function App() {
   return (
     <div className="App">
       <Routes>
-        <Route
-          path="/login"
-          element={isAuthenticated ? <Navigate to="/app" /> : <Login />}
-        />
-        <Route
-          path="/SignUp"
-          element={isAuthenticated ? <Navigate to="/app" /> : <SignUp />}
-        />
-        <Route path="/" element={<Landing />} />
-        <Route
-          path="/app/*"
-          element={
-            isAuthenticated ? (
-              <Layout>
+        <Route path="/login" element={isAuthenticated ? <Navigate to="/app" /> : <Login />}/>
+        <Route path="/SignUp" element={isAuthenticated ? <Navigate to="/app" /> : <SignUp />}/>
+        <Route path="about" element={<About />} />
+        <Route path="/" element={<Landing />} /><Route path="/app/*"element={isAuthenticated ? (<Layout>  
                 <Routes>
                   <Route path="search" element={<Search />} />
                   <Route path="comment/:playlistId" element={<Comment />} />

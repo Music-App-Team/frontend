@@ -9,6 +9,8 @@ import {
 import { toast } from "react-toastify";
 import { usePlaylistContext } from "../../context/PlaylistContext";
 import { saveAs } from "file-saver";
+import playIcon from "../../assets/play.gif";
+import "./musicItem.scss";
 
 function MusicItem({ music }) {
   const audio = useRef(new Audio(music.link));
@@ -44,8 +46,8 @@ function MusicItem({ music }) {
   };
 
   return (
-    <div>
-      <div class="list-group list-group-horizontal ms-4 mt-5 ">
+    <div className="musicItem">
+      <div class="list-group list-group-horizontal ">
         <span class="list-group-item">{music.name}</span>
         <span class="list-group-item">
           {playing ? (
@@ -59,9 +61,9 @@ function MusicItem({ music }) {
         <span class="list-group-item">{music.album}</span>
         <span class="list-group-item">{music.lang}</span>
         <span class="list-group-item">
-          {" "}
           <AiOutlineDownload onClick={handleDownload} />
         </span>
+          {playing && <img height={40} src={playIcon} />}
       </div>
     </div>
   );
