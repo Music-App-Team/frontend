@@ -22,8 +22,10 @@ function Login() {
         const userInfo = res.data.userInfo;
         localStorage.setItem("token", token);
         localStorage.setItem("email", userInfo.email);
-        localStorage.setItem("image", userInfo.image);
+        if (userInfo.image) localStorage.setItem("image", userInfo.image);
         localStorage.setItem("fullName", userInfo.fullName);
+        axios.defaults.headers.common.token = token;
+
         loginContext({
           email: userInfo.email,
           image: userInfo.image,
