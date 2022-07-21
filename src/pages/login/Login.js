@@ -15,15 +15,17 @@ function Login() {
     e.preventDefault();
 
     axios
-      .post("http://localhost:3010/auth/login", { email, password })
+      .post("/auth/login", { email, password })
       .then((res) => {
         toast.success("login successfully");
         const token = res.data.token;
         const userInfo = res.data.userInfo;
         localStorage.setItem("token", token);
         localStorage.setItem("email", userInfo.email);
-        localStorage.setItem("image", userInfo.image);
+        if (userInfo.image) localStorage.setItem("image", userInfo.image);
         localStorage.setItem("fullName", userInfo.fullName);
+        axios.defaults.headers.common.token = token;
+
         loginContext({
           email: userInfo.email,
           image: userInfo.image,

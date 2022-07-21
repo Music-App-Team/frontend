@@ -11,17 +11,23 @@
   padding: 0.5rem 3rem;
   justify-content: space-between;
   flex-direction: row;
+  position: fixed;
+  top: 0;
+  left: 0;
+  // z-index: 2;
+  height: 4rem;
   @include respond(phone) {
     padding: 0.5rem;
   }
 
   .profileImage {
     border-radius: 50%;
-  }
-  img {
     height: 2rem;
     margin-left: 3rem;
-
+    background-size: cover;
+    background-position: center;
+    width: 2rem;
+  
     @include respond(phone) {
       margin-left: 1rem;
     }
@@ -37,7 +43,6 @@
     margin-left: 2rem;
     @include respond(phone) {
       margin-left: unset;
-
     }
     button {
       border-radius: 5px;

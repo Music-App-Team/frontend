@@ -9,10 +9,10 @@ import Dashboard from "../pages/dashboard/dashboard";
 import Playlist from "../pages/playlists/Playlist";
 import PlaylistDetail from "../pages/playlistDetail/PlaylistDetail";
 import { useUserInfoContext } from "../context/UserInfoContext";
-import Profile from "./profile/Profile";
 import { PlaylistContextProvider } from "../context/PlaylistContext";
 import About from "../pages/about/About";
 
+import Profile from "../pages/profile/Profile";
 function App() {
   const { isAuthenticated } = useUserInfoContext();
   console.log("isAuthenticated", isAuthenticated);
@@ -25,20 +25,27 @@ function App() {
         <Route path="/" element={<Landing />} /><Route path="/app/*"element={isAuthenticated ? (<Layout>  
                 <Routes>
                   <Route path="search" element={<Search />} />
-                  <Route path="comment" element={<Comment />} />
+                  <Route path="comment/:playlistId" element={<Comment />} />
                   <Route path="dashboard" element={<Dashboard />} />
                   <Route path="playlists" element={<Playlist />} />
-                  <Route path="playlist/:playlistId" element={
+                  <Route
+                    path="playlist/:playlistId"
+                    element={
                       <PlaylistContextProvider>
                         <PlaylistDetail />
-                      </PlaylistContextProvider>}/>
+                      </PlaylistContextProvider>
+                    }
+                  />
                   <Route path="playlists" element={<Playlist />} />
                   <Route path="profile" element={<Profile />} />
                   <Route path="*" element={<Navigate to="/app/dashboard" />} />
                 </Routes>
               </Layout>
             ) : (
-              <Navigate to={"/login"} />)}/>
+              <Navigate to={"/login"} />
+            )
+          }
+        />
         <Route path="*" element={<Navigate to="/app/dashboard" />} />
       </Routes>
     </div>
@@ -46,3 +53,5 @@ function App() {
 }
 
 export default App;
+
+
