@@ -1,4 +1,4 @@
-import { Link,  useParams } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./playListDetail.scss";
 import { BsPlay } from "react-icons/bs";
@@ -16,7 +16,9 @@ function PlaylistDetail() {
   const { playlistId } = useParams();
   const [inRenameStatus, setInRenameStatus] = useState(false);
   const [renameText, setRenameText] = useState("");
-  const { playlistDetail, own, songs, loadPlaylistData } =usePlaylistContext();
+  const { playlistDetail, own, songs, loadPlaylistData, togglePlayAll } =
+    usePlaylistContext();
+  const navigate = useNavigate();
 
   if (!playlistDetail) return <p>loading ...</p>;
 
@@ -36,9 +38,22 @@ function PlaylistDetail() {
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   };
 
+  const handleDeletePlaylist = () => {
+    axios
+      .delete("/playlist/deletePlaylist/" + playlistId)
+      .then((res) => {
+        toast.success("playlist removed successfully");
+        navigate("/app/playlists");
+      })
+      .catch((err) => toast.error(err.response?.data?.message || err.message));
+  };
+
+   const handlePlayAll = () => {
+     togglePlayAll();
+   };
 
   return (
-    <div>
+    <>
       <div class="container-playlistdetail">
         <div class="playlistaction">
           <div>
@@ -50,20 +65,25 @@ function PlaylistDetail() {
           </div>
           <div className="detail__rows">
             {inRenameStatus ? (
-              <input autoFocus value={renameText}
+              <input
+                autoFocus
+                value={renameText}
                 onKeyUp={(e) => e.code === "Enter" && handleRenameFinish()}
                 onBlur={handleRenameFinish}
-                onChange={(e) => setRenameText(e.target.value)} />
-            ) : (<h4 onClick={handleRenameClick}>{playlistDetail.title}</h4>)}
-            
+                onChange={(e) => setRenameText(e.target.value)}
+              />
+            ) : (
+              <h4 onClick={handleRenameClick}>{playlistDetail.title}</h4>
+            )}
+
             <p className="detail__comment">
               {songs.length} songs
-              <Link className="link" to="/app/comment">
+              <Link className="link" to={`/app/comment/${playlistId}`}>
                 <AiOutlineComment />
               </Link>
             </p>
             <div className="detail__actions">
-              <button className="play">
+              <button className="play" onClick={handlePlayAll}>
                 Play All <BsPlay />
               </button>
               {own && (
@@ -74,7 +94,7 @@ function PlaylistDetail() {
                     </button>
                   </div>
                   <div class="delete">
-                    <button >
+                    <button onClick={handleDeletePlaylist}>
                       Delete <RiDeleteBin5Line />
                     </button>
                   </div>
@@ -97,7 +117,7 @@ function PlaylistDetail() {
         onClose={() => setAddSongModalOpen(false)}
         onUpdate={loadPlaylistData}
       />
-    </div>
+    </>
   );
 }
 

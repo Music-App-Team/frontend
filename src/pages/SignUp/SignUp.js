@@ -20,7 +20,7 @@ function SignUp() {
     else if (password !== confirmPassword)
       return toast.error("password and confirm password must be same");
 
-    axios.post("http://localhost:3010/auth/signup", {
+    axios.post("/auth/signup", {
         firstName,
         lastName,
         password,
