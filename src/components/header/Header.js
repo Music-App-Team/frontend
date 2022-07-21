@@ -8,23 +8,19 @@ function Header() {
   const { signoutContext, isAuthenticated, userInfo } = useUserInfoContext();
 
   function handleSignout() {
-    localStorage.removeItem("token");
+    localStorage.clear();
     signoutContext();
   }
-
-  const isLogin = localStorage.getItem("token");
 
   return (
     <div className="header">
       <img id="logo" src="/images/Logo.png" alt="Logo" />
       <div className="main">
-        <Link to="/app/profile">{!userInfo.image ? ( <FaUserCircle id="profil-image" />
+        <Link to="/app/profile">
+          {!userInfo.image ? (
+            <FaUserCircle id="profil-image" />
           ) : (
-            <img
-              className="profileImage"
-              src={userInfo.image}
-              alt={userInfo.email}
-            />
+            <div className="profileImage"  style={{backgroundImage: `url(${userInfo.image})`}} />
           )}
         </Link>
         {isAuthenticated ? (

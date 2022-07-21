@@ -10,11 +10,10 @@ import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
 
 function Playlist() {
-
   const [openCreateModal, setOpenCreateModal] = useState(false);
   const [playlists, setPlaylists] = useState([]);
-  const [likes, setLikes] = useState([])
-  const [dislikes, setDisLikes] = useState([])
+  const [likes, setLikes] = useState([]);
+  const [dislikes, setDisLikes] = useState([]);
 
   function handleCreatePlaylist() {
     setOpenCreateModal(true);
@@ -32,19 +31,18 @@ function Playlist() {
   }
 
   function handleAddToFavorite(playlistId) {
-    axios.get(`/user/addPlaylistToFavorite/${playlistId}`)
-      .then(res => {
-        toast.success(res.data.message)
-      }).catch((err) => toast.error(err.response?.data?.message || err.message))
+    axios
+      .get(`/user/addPlaylistToFavorite/${playlistId}`)
+      .then((res) => {
+        toast.success(res.data.message);
+      })
+      .catch((err) => toast.error(err.response?.data?.message || err.message));
   }
 
   // add like
   const addLikes = async (newLikes) => {
     try {
-      const request = await axios.patch(
-        `/user/likes`,
-        { likes: newLikes }
-      );
+      const request = await axios.patch(`/user/likes`, { likes: newLikes });
     } catch (error) {
       console.log(error);
     }
@@ -52,15 +50,13 @@ function Playlist() {
 
   const toggleLike = (id) => {
     if (likes.find((like) => id === like)) {
-      const newLikes = likes.filter((like) => like !== id)
+      const newLikes = likes.filter((like) => like !== id);
       setLikes(newLikes);
-      addLikes(newLikes)
-
+      addLikes(newLikes);
     } else {
-      const newLikes = [...likes, id]
+      const newLikes = [...likes, id];
       setLikes(newLikes);
-      addLikes(newLikes)
-
+      addLikes(newLikes);
     }
   };
   // git Likes
@@ -71,34 +67,32 @@ function Playlist() {
         .then((res) => {
           setLikes(res.data);
         })
-        .catch((err) => toast.error(err.response?.data?.message || err.message));
+        .catch((err) =>
+          toast.error(err.response?.data?.message || err.message)
+        );
     }
 
     getLikes();
   }, []);
 
-// ADD DISLIKES
+  // ADD DISLIKES
   const addDisLikes = async (newDisLikes) => {
     try {
-      const request = await axios.patch(
-        `/user/dislikes`,
-        { dislikes: newDisLikes }
-      );
-    } catch (error) {
-    }
+      const request = await axios.patch(`/user/dislikes`, {
+        dislikes: newDisLikes,
+      });
+    } catch (error) {}
   };
 
   const toggleDisLike = (id) => {
     if (dislikes.find((dislike) => id === dislike)) {
-      const newDisLikes = dislikes.filter((dislike) => dislike !== id)
+      const newDisLikes = dislikes.filter((dislike) => dislike !== id);
       setDisLikes(newDisLikes);
-      addDisLikes(newDisLikes)
-
+      addDisLikes(newDisLikes);
     } else {
-      const newDisLikes = [...dislikes, id]
+      const newDisLikes = [...dislikes, id];
       setDisLikes(newDisLikes);
-      addDisLikes(newDisLikes)
-
+      addDisLikes(newDisLikes);
     }
   };
   // git DisLikes
@@ -109,13 +103,15 @@ function Playlist() {
         .then((res) => {
           setDisLikes(res.data);
         })
-        .catch((err) => toast.error(err.response?.data?.message || err.message));
+        .catch((err) =>
+          toast.error(err.response?.data?.message || err.message)
+        );
     }
 
     getDisLikes();
   }, []);
   return (
-    <div className="container-fluid">
+    <>
       <Container className="container-playlist">
         <div className="header-playlist">
           <h1 className="playlist-h1">Play List</h1>
@@ -123,62 +119,74 @@ function Playlist() {
             Create
           </button>
         </div>
-        <Table className="playlist-table">
-          <thead>
-            <tr>
-              <th>Name</th>
-              <th>User</th>
-              <th>Actions</th>
-            </tr>
-          </thead>
-          <tbody>
-            {playlists.map((item) => (
+        <div >
+          <Table className="playlist-table">
+            <thead>
               <tr>
-                <td>{item.title}</td>
-                <td>{item.user?.firstName}</td>
-                <td>
-                  <div className="container-action">
-                    <Link to={`/app/playlist/${item._id}`}>
-                      <button className="button-playlist">View</button>
-                    </Link>
-                    <button className="like" style={{
-                      color: likes.find((like) => item._id === like)
-                        ? "blue"
-                        : undefined,
-                    }}
-                      key={item._id}
-                      onClick={() => toggleLike(item._id)} >
-                      <AiOutlineLike />
-                    </button>
-                    <button className="dislike" style={{
-                      color: dislikes.find((dislike) => item._id === dislike)
-                        ? "red"
-                        : undefined,
-                    }}
-                      key={item._id}
-                      onClick={() => toggleDisLike(item._id)}>
-                      <AiOutlineDislike />
-                    </button>
-                    <span
-                      className="star"
-                      href="url"
-                      onClick={() => handleAddToFavorite(item._id)}
-                    >
-                      <MdOutlineStarOutline />
-                    </span>
-                  </div>
-                </td>
+                <th>Name</th>
+                <th>User</th>
+                <th>Actions</th>
               </tr>
-            ))}
-          </tbody>
-        </Table>
+            </thead>
+            <tbody>
+              {playlists.map(
+                (item) => (
+                  <tr>
+                    <td>{item.title}</td>
+                    <td>{item.user?.firstName}</td>
+                    <td>
+                      <div className="container-action">
+                        <Link to={`/app/playlist/${item._id}`}>
+                          <button className="button-playlist">View</button>
+                        </Link>
+                        <button
+                          className="like"
+                          style={{
+                            color: likes.find((like) => item._id === like)
+                              ? "blue"
+                              : undefined,
+                          }}
+                          key={item._id}
+                          onClick={() => toggleLike(item._id)}
+                        >
+                          <AiOutlineLike />
+                        </button>
+                        <button
+                          className="dislike"
+                          style={{
+                            color: dislikes.find(
+                              (dislike) => item._id === dislike
+                            )
+                              ? "red"
+                              : undefined,
+                          }}
+                          key={item._id}
+                          onClick={() => toggleDisLike(item._id)}
+                        >
+                          <AiOutlineDislike />
+                        </button>
+                        <span
+                          className="star"
+                          href="url"
+                          onClick={() => handleAddToFavorite(item._id)}
+                        >
+                          <MdOutlineStarOutline />
+                        </span>
+                      </div>
+                    </td>
+                  </tr>
+                )
+              )}
+            </tbody>
+          </Table>
+        </div>
       </Container>
       <CreatePlaylistModal
         open={openCreateModal}
         onUpdate={getPlayList}
         onClose={() => setOpenCreateModal(false)}
       />
-    </div>
+    </>
   );
 }
 
