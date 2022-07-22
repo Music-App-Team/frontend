@@ -34,9 +34,6 @@ function Header() {
           </div>
         )}
       </div>
-      <div>hallo
-        
-      </div>
     </div>
   );
 }
