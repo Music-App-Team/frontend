@@ -1,3 +1,4 @@
+
 @import '../../assets/mixins';
 
 body{
@@ -14,11 +15,12 @@ body{
         margin-left: 5rem;
         margin-right: 5rem;
 
+
         @include respond(phone){
             margin-left: 0;
             margin-right: 0;
         }
-
+        
         .about-h1{
             
             color: #265865;
@@ -46,9 +48,7 @@ body{
 
                 }
 
-              
-                
-                
+             
                 .li-about{
                     list-style-type: none;
                     font-size: 2rem; 
