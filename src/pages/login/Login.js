@@ -37,26 +37,28 @@ function Login() {
 
   return (
     <div className="login-container">
-      <img src="images/musicLogo.png" alt="logo" />
-      <div className="login">
-        <form>
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="email"
-          />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="password"
-          />
-          <button onClick={handleSubmit} disabled={!email || !password}>
-            login
-          </button>
-        </form>
-        <Link to="/SignUp">don't have account ? sign up now</Link>
+      <div className="login-box">
+        <img src="images/musicLogo.png" alt="logo" />
+        <div className="login">
+          <form>
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="email"
+            />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="password"
+            />
+            <button onClick={handleSubmit} disabled={!email || !password}>
+              login
+            </button>
+          </form>
+          <Link to="/SignUp">don't have account ? sign up now</Link>
+        </div>
       </div>
     </div>
   );

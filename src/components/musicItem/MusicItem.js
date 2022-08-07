@@ -11,24 +11,16 @@ import { usePlaylistContext } from "../../context/PlaylistContext";
 import { saveAs } from "file-saver";
 import playIcon from "../../assets/play.gif";
 import "./musicItem.scss";
+import { usePlayerContext } from "../../context/PlayerContext";
 
 function MusicItem({ music }) {
-  const audio = useRef(new Audio(music.link));
-  const [playing, setPlaying] = useState(false);
+  const {play,isPlaying,pause,currentLink} = usePlayerContext()
   const { own, playlistId, loadPlaylistData } = usePlaylistContext();
 
-  useEffect(() => {
-    audio.current.onplaying = () => {
-      setPlaying(true);
-    };
-    audio.current.onpause = () => {
-      setPlaying(false);
-    };
-  });
 
   const handlePlay = () => {
-    if (playing) audio.current.pause();
-    else audio.current.play();
+    if (isPlaying && currentLink===music.link) pause();
+    else play(music);
   };
 
   const handleRemove = () => {
@@ -50,7 +42,7 @@ function MusicItem({ music }) {
       <div class="list-group list-group-horizontal ">
         <span class="list-group-item">{music.name}</span>
         <span class="list-group-item">
-          {playing ? (
+          {isPlaying && currentLink===music.link ? (
             <AiFillPauseCircle onClick={handlePlay} />
           ) : (
             <AiFillPlayCircle onClick={handlePlay} />
@@ -59,11 +51,11 @@ function MusicItem({ music }) {
         </span>
         <span class="list-group-item">{music.artist}</span>
         <span class="list-group-item">{music.album}</span>
-        <span class="list-group-item">{music.lang}</span>
-        <span class="list-group-item">
+        <span class="list-group-item hiddenOnPhone">{music.lang}</span>
+        <span class="list-group-item smallOnPhone">
           <AiOutlineDownload onClick={handleDownload} />
         </span>
-          {playing && <img height={40} src={playIcon} />}
+          {isPlaying && currentLink===music.link && <img height={45} src={playIcon} />}
       </div>
     </div>
   );

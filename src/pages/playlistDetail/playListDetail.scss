@@ -1,3 +1,5 @@
+@import '../../assets/mixins';
+
 :root {
   --color: #b6b6b6;
 }
@@ -5,8 +7,7 @@
 .container-playlistdetail {
   height: 100%;
   background-color: #1a1a1a;
-  padding-top: 20px;
-  padding-left: 20px;
+  padding: 1.25rem;
 }
 p {
   font-size: 1rem;
@@ -26,12 +27,12 @@ p {
     font-size: 1.5rem;
   }
   h4 {
-    font-size: 35px;
+    font-size: 2rem;
     margin: unset;
   }
   img {
-    width: 150px;
-    height: 150px;
+    width: 8rem;
+    height: 8rem;
   }
   .playall {
     display: inline-block;
@@ -70,6 +71,10 @@ p {
 .detail__actions {
   display: flex;
   gap: 3rem;
+
+  @include respond(phone){
+    gap : 1rem
+  }
 }
 
 .detail__comment {

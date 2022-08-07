@@ -139,7 +139,7 @@ function Playlist() {
                         <Link to={`/app/playlist/${item._id}`}>
                           <button className="button-playlist">View</button>
                         </Link>
-                        <button
+                        <span
                           className="like"
                           style={{
                             color: likes.find((like) => item._id === like)
@@ -150,8 +150,8 @@ function Playlist() {
                           onClick={() => toggleLike(item._id)}
                         >
                           <AiOutlineLike />
-                        </button>
-                        <button
+                        </span>
+                        <span
                           className="dislike"
                           style={{
                             color: dislikes.find(
@@ -164,7 +164,7 @@ function Playlist() {
                           onClick={() => toggleDisLike(item._id)}
                         >
                           <AiOutlineDislike />
-                        </button>
+                        </span>
                         <span
                           className="star"
                           href="url"
