@@ -39,7 +39,7 @@ function Header({ toggleSidebar }) {
           </div>
         )}
       </div>
-      <div>hallo
+      <div>
         
       </div>
     </div>
