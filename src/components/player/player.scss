@@ -5,7 +5,7 @@
   bottom: 0;
   left: 16rem;
   width: calc(100% - 16rem);
-  background: #34495e;
+  background: #1d5a65;
   display: flex;
   gap: 1rem;
   color: lightgray;
@@ -55,7 +55,7 @@
     justify-content: space-between;
     align-items: center;
     font-size: 2.5rem;
-
+    
     svg {
       cursor: pointer;
     }
@@ -67,14 +67,17 @@
   .progressContainer {
     flex: 1;
     height: 1rem;
-    border: 3px solid blanchedalmond;
+    border: 1px solid #d9d9d9;
     border-radius: 0.2rem;
-  }
 
-  .progressbar {
-    height: 100%;
-    background-color: brown;
-    transition: 0.1s all ease;
+    .progressBar {
+      height: 100%;
+      background-color: #d9d9d9;
+      transition: 0.1s all ease;
+
+     
+    
+      }
   }
 
   .centerIcon{

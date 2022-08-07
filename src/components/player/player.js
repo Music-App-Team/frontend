@@ -8,7 +8,14 @@ import {
 } from "react-icons/fa";
 import { usePlayerContext } from "../../context/PlayerContext";
 import "./player.scss";
-import playIcon from '../../assets/play.gif'
+import playIcon from '../../assets/play.gif';
+import play1Icon from "../../assets/play1.gif";
+import play2Icon from "../../assets/play2.gif";
+import play3Icon from "../../assets/play3.gif";
+
+
+
+
 
 function Player() {
   const {
@@ -31,7 +38,7 @@ function Player() {
           <h4>{currentSongName}</h4>
           <div className="playerContainer__icons">
             {/* <FaBackward className="iconSmall" /> */}
-            {isPlaying ? <img width={70} src={playIcon} /> : <span style={{width : "70px"}}></span>}
+            {isPlaying ? <img width={70} src={play1Icon} /> : <span style={{width : "70px"}}></span>}
             {isPlaying ? (
               <FaPauseCircle className="centerIcon" onClick={pause} />
             ) : (
@@ -45,7 +52,7 @@ function Player() {
           <span>{currentTime}</span>
           <div className="progressContainer">
             <div
-              className="progressbar"
+              className="progressBar"
               style={{ width: progressPercent + "%" }}
             />
           </div>
