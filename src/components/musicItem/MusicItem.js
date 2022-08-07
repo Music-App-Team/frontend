@@ -13,6 +13,7 @@ import play3Icon from "../../assets/play3.gif";
 import "./musicItem.scss";
 import { usePlayerContext } from "../../context/PlayerContext";
 
+
 function MusicItem({ music }) {
   const {play,isPlaying,pause,currentLink} = usePlayerContext()
   const { own, playlistId, loadPlaylistData } = usePlaylistContext();
@@ -55,7 +56,7 @@ function MusicItem({ music }) {
         <span class="list-group-item smallOnPhone">
           <AiOutlineDownload onClick={handleDownload} />
         </span>
-          {isPlaying && currentLink===music.link && <img height={45} src={play3Icon} />}
+          {isPlaying && currentLink===music.link && <img height={40} src={playIcon} />}
       </div>
     </div>
   );
