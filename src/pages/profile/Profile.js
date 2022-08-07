@@ -50,29 +50,31 @@ export default function UserInfo() {
 
   return (
     <div className="info-user">
-      <img
-        src={imagePreview || userInfo?.image}
-        className="profileImagePreview"
-        alt="profileImage"
-      />
-
-      <form
-        className="form-foto"
-        name="fileForm"
-        data-netifly="true"
-        onSubmit={handleSubmit}
-      >
-        <label htmlFor="file">
-          <BsFillPenFill className="pen" /> Choose your picture...
-        </label>{" "}
-        <input
-          className="browse"
-          type="file"
-          name="file"
-          onChange={handleChange}
+      <div className="info-user__box">
+        <img
+          src={imagePreview || userInfo?.image}
+          className="profileImagePreview"
+          alt="profileImage"
         />
-        <button type="submit">Submit</button>
-      </form>
+
+        <form
+          className="form-foto"
+          name="fileForm"
+          data-netifly="true"
+          onSubmit={handleSubmit}
+        >
+          <label htmlFor="file">
+            <BsFillPenFill className="pen" /> Choose your picture...
+          </label>{" "}
+          <input
+            className="browse"
+            type="file"
+            name="file"
+            onChange={handleChange}
+          />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
     </div>
   );
 }

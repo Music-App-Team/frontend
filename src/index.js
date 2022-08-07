@@ -8,6 +8,7 @@ import "react-toastify/dist/ReactToastify.css";
 import "./index.scss";
 import axios from "axios";
 import { UserInfoContextProvider } from "./context/UserInfoContext";
+import { PlayerContextProvider } from "./context/PlayerContext";
 
 axios.defaults.headers.common.token = localStorage.getItem("token");
 axios.defaults.baseURL = process.env.REACT_APP_API_HOST;
@@ -16,10 +17,12 @@ const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
   <React.StrictMode>
     <UserInfoContextProvider>
-      <BrowserRouter>
-        <App />
-        <ToastContainer />
-      </BrowserRouter>
+      <PlayerContextProvider>
+        <BrowserRouter>
+          <App />
+          <ToastContainer />
+        </BrowserRouter>
+      </PlayerContextProvider>
     </UserInfoContextProvider>
   </React.StrictMode>
 );

@@ -16,8 +16,7 @@ function PlaylistDetail() {
   const { playlistId } = useParams();
   const [inRenameStatus, setInRenameStatus] = useState(false);
   const [renameText, setRenameText] = useState("");
-  const { playlistDetail, own, songs, loadPlaylistData, togglePlayAll } =
-    usePlaylistContext();
+  const { playlistDetail, own, songs, loadPlaylistData, togglePlayAll } = usePlaylistContext();
   const navigate = useNavigate();
 
   if (!playlistDetail) return <p>loading ...</p>;
@@ -83,9 +82,9 @@ function PlaylistDetail() {
               </Link>
             </p>
             <div className="detail__actions">
-              <button className="play" onClick={handlePlayAll}>
-                Play All <BsPlay />
-              </button>
+              {/* <button className="play" onClick={handlePlayAll}> */}
+                {/* Play All <BsPlay /> */}
+              {/* </button> */}
               {own && (
                 <>
                   <div class="rename">

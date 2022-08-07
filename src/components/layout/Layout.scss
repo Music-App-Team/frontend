@@ -1,3 +1,5 @@
+@import "../../assets/mixins";
+
 body {
   height: 100vh;
 }
@@ -6,8 +8,18 @@ body {
   padding-left: 16rem;
   padding-top: 4rem;
   background-color: #1a1a1a;
+
+
+  @include respond(tab-port){
+    padding-left: unset;
+  }
+
   main {
     overflow-y: auto;
     height: calc(100vh - 4rem /* header height*/);
   }
+
 }
+// .layoutExpanded {
+//   padding-left: 0;
+// }

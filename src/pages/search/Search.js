@@ -1,15 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import "./search.scss";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import { FaPlayCircle } from "react-icons/fa";
-import { FaMinus } from "react-icons/fa";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
-// const url = process.env.REACT_APP_API_HOST;
 
 function Search() {
   const [searchSong, setSearchSong] = useState("");
@@ -29,8 +22,8 @@ function Search() {
 
   return (
     <div className="searchContainer">
-      <div class="col-md-12 ">
-        <h1>Play List</h1>
+      <div class="col-12 ">
+        <h1>search playlists</h1>
         <input
           className="search-input"
           type="text"
@@ -49,7 +42,6 @@ function Search() {
         <div className="searchSongResult">
           {hasNoResult && <h1>Album Result :0 </h1>}
 
-
           {results.map((item) => {
             console.log(item);
             return (
@@ -57,12 +49,9 @@ function Search() {
                 <p className="album-text">{item.title}</p>
                 <p>{item.user.firstName}</p>
                 <p>{item.songs.length}</p>
-                <div>
-                  {" "}
-                  <Link to={`/app/playlist/${item._id}`}>
-                    <button className="button-playlist">View</button>
-                  </Link>
-                </div>
+                <Link to={`/app/playlist/${item._id}`} className="albumResult__link">
+                  <button className="button-playlist">View</button>
+                </Link>
               </div>
             );
           })}
