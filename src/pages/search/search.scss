@@ -8,40 +8,49 @@
   .col-md-12 {
     color: whitesmoke;
   }
+  
   .searchSongResult {
     display: flex;
     flex-direction: column;
     gap: 0.5rem;
+    width: 100%;
     margin-top: 2rem;
   }
   p {
     margin: 0.5rem !important;
   }
   h1 {
-    font-size: 1rem;
+    font-size: 1.5rem;
     margin-top: 1rem;
+    color:  white;
+    text-transform: capitalize;
   }
 
-  @media (max-width: 1150px) {
-    flex-direction: column;
-  }
+ 
 }
 
 .search-input {
   background-color:  #D9D9D9;
-  width: 90%;
+  width: 100%;
   border: none;
   border-radius: 5px;
-  height: 40px;
+  font-size: 1.5rem;
+  padding : 0.5rem
 }
 .albumResult {
   display: flex;
   justify-content: space-between;
   align-items: center;
   height: 40px;
-  width: 90%;
-  background-color: grey;
+  width: 100%;
+  background-color: whitesmoke;
   border-radius: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr auto 1fr;
+
+  .albumResult__link {
+    text-align: right;
+  }
 
   .album-text {
     margin-left: 2rem;
@@ -54,8 +63,9 @@
   button {
     border-radius: 8px;
     margin-right: 1rem;
-    width: 150px;
+    width: 7rem;
     background-color: #35626f;
+    color: white;
   }
 }
 p {

@@ -1,15 +1,23 @@
+@import '../../assets/mixins';
+
 body{
     background-color: #1A1A1A !important;
 }
 .container-main-about{
     background-color: #1A1A1A;
-    width: 90vw;
+    width: 85vw;
+    margin: 0 auto;
     height: 80vh;
 
     .container-about{
         background-color: #1a1a1a;
         margin-left: 5rem;
         margin-right: 5rem;
+
+        @include respond(phone){
+            margin-left: 0;
+            margin-right: 0;
+        }
 
         .about-h1{
             

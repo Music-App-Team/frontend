@@ -4,25 +4,26 @@ import { AiFillHome } from "react-icons/ai";
 import { MdOutlinePlaylistPlay } from "react-icons/md";
 import { FaSistrix } from "react-icons/fa";
 import "./sidebar.scss";
-export default function Sidebar() {
+export default function Sidebar({isSidebarOpen,toggleSidebar}) {
+
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isSidebarOpen ? "sidebarOpen":""}`}>
       <ul>
         <li>
           <AiFillHome />
-          <NavLink to="/app/dashboard" className="text-item">
+          <NavLink to="/app/dashboard" className="text-item" onClick={toggleSidebar}>
             Dashboard
           </NavLink>
         </li>
         <li>
           <MdOutlinePlaylistPlay />
-          <NavLink to="/app/playlists" className="text-item">
+          <NavLink to="/app/playlists" className="text-item" onClick={toggleSidebar}>
             Play List
           </NavLink>
         </li>
         <li>
           <FaSistrix />
-          <NavLink to="/app/search" className="text-item">
+          <NavLink to="/app/search" className="text-item" onClick={toggleSidebar}>
             Search Song
           </NavLink>
         </li>

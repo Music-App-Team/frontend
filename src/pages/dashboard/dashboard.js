@@ -49,7 +49,6 @@ function Dashboard() {
               <td>{item.user?.firstName}</td>
               <td>
                 <div className="container-action">
-                  {" "}
                   <Link to={`/app/playlist/${item._id}`}>
                     <button className="button-playlist">Open</button>
                   </Link>

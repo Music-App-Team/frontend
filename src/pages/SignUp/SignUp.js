@@ -20,7 +20,8 @@ function SignUp() {
     else if (password !== confirmPassword)
       return toast.error("password and confirm password must be same");
 
-    axios.post("/auth/signup", {
+    axios
+      .post("/auth/signup", {
         firstName,
         lastName,
         password,
@@ -34,45 +35,56 @@ function SignUp() {
   }
 
   return (
-    <div className="SignUp-container">
-      <img src="images/musicLogo.png" alt="logo" />
-      <div className="SignUp">
-        <form>
-          <input
-            value={firstName}
-            onChange={(e) => setFirstName(e.target.value)}
-            type="text"
-            placeholder="name"
-          />
-          <input
-            value={lastName}
-            onChange={(e) => setLastName(e.target.value)}
-            type="text"
-            placeholder="last name"
-          />
-          <input
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-            type="email"
-            placeholder="email"
-          />
-          <input
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="password"
-          />
-          <input
-            value={confirmPassword}
-            onChange={(e) => setConfirmPassword(e.target.value)}
-            type="password"
-            placeholder="confirm password"
-          />
-          <button onClick={handleSubmit} disabled={!firstName || !lastName || !email || !password || !confirmPassword}>
-            SignUp
-          </button>
-        </form>
-        <Link to="/login">already sign up ? log in</Link>
+    <div className="signup-container">
+      <div className="signup-box">
+        <img src="images/musicLogo.png" alt="logo" />
+        <div className="SignUp">
+          <form>
+            <input
+              value={firstName}
+              onChange={(e) => setFirstName(e.target.value)}
+              type="text"
+              placeholder="name"
+            />
+            <input
+              value={lastName}
+              onChange={(e) => setLastName(e.target.value)}
+              type="text"
+              placeholder="last name"
+            />
+            <input
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              type="email"
+              placeholder="email"
+            />
+            <input
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              type="password"
+              placeholder="password"
+            />
+            <input
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              type="password"
+              placeholder="confirm password"
+            />
+            <button
+              onClick={handleSubmit}
+              disabled={
+                !firstName ||
+                !lastName ||
+                !email ||
+                !password ||
+                !confirmPassword
+              }
+            >
+              SignUp
+            </button>
+          </form>
+          <Link to="/login">already sign up ? log in</Link>
+        </div>
       </div>
     </div>
   );

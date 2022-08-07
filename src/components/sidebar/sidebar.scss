@@ -1,3 +1,5 @@
+@import '../../assets/mixins';
+
 .sidebar {
   color: rgb(255, 255, 255);
   background-color: #0e0d0c;
@@ -9,7 +11,17 @@
   top: 0;
   width: 16rem;
   padding-top: 5rem;
-  z-index: 0;
+  z-index: 1;
+
+  @include respond(tab-port){
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100%;
+    transform: translateX(-100%);
+    transition: all 0.3s ease;
+  }
+  
 
   ul {
     padding: unset;
@@ -20,16 +32,11 @@
     text-decoration: unset;
     font-weight: 500;
   }
-  @media (max-width: 740px) {
+
+  @include respond(tab-port){
     font-size: 1rem;
-    background-color: #1a1a1a;
   }
-  @media (min-width: 740px) {
-    background-color: #1a1a1a;
-  }
-  @media (min-width: 990px) {
-    background-color: #0e0d0c;
-  }
+ 
   .text-item {
     color: white;
     margin-left: 1rem;
@@ -37,5 +44,12 @@
   }
   .active {
     color: #c22703;
+  }
+}
+
+
+.sidebarOpen {
+  @include respond(tab-port){
+    transform: translateX(0);
   }
 }

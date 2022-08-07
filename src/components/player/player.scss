@@ -1,0 +1,83 @@
+@import '../../assets/mixins';
+
+.playerContainer {
+  position: fixed;
+  bottom: 0;
+  left: 16rem;
+  width: calc(100% - 16rem);
+  background: #34495e;
+  display: flex;
+  gap: 1rem;
+  color: lightgray;
+  padding: 0.5rem 1rem;
+  transition: 0.3s all ease;
+  z-index: 2;
+
+  @include respond(tab-port){
+    left: 0;
+    width: 100%;
+  }
+
+  h4 {
+    margin: unset;
+  }
+  .songCover {
+    height: 5rem;
+    width: 5rem;
+    border-radius: 1rem;
+  }
+
+  .playerContainer__rows {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    flex: 1;
+    gap: 0.5rem;
+  }
+
+  .playerContainer__row1 {
+    display: grid;
+    grid-template-columns: max-content 1fr;
+    gap: 0.5rem;
+    align-items: center;
+  }
+  .playerContainer__row2 {
+    display: flex;
+    gap: 01rem;
+    align-items: center;
+  }
+  .playerContainer__icons {
+    justify-self: center;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 2.5rem;
+
+    svg {
+      cursor: pointer;
+    }
+    .iconSmall {
+      font-size: 1.2rem;
+    }
+  }
+
+  .progressContainer {
+    flex: 1;
+    height: 1rem;
+    border: 3px solid blanchedalmond;
+    border-radius: 0.2rem;
+  }
+
+  .progressbar {
+    height: 100%;
+    background-color: brown;
+    transition: 0.1s all ease;
+  }
+
+  .centerIcon{
+    transform: translateX(-5rem);
+  }
+}
