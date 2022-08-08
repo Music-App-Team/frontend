@@ -21,7 +21,7 @@ function App() {
       <Routes>
         <Route path="/login" element={isAuthenticated ? <Navigate to="/app" /> : <Login />}/>
         <Route path="/SignUp" element={isAuthenticated ? <Navigate to="/app" /> : <SignUp />}/>
-        <Route path="about" element={<About />} />
+        <Route path="/about" element={<About />} />
         <Route path="/" element={<Landing />} /><Route path="/app/*"element={isAuthenticated ? (<Layout>  
                 <Routes>
                   <Route path="search" element={<Search />} />
