@@ -19,7 +19,7 @@ const Footer = () => {
                 <div class="COMPANY">
                   <h5 class="">COMPANY</h5>
                   <ul class="list-unstyled lh-lg">
-                    <Link to={`/About`}>
+                    <Link to={`/about`}>
                       <li>About</li>
                     </Link>
                     <li>Jobs</li>
