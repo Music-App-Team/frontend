@@ -9,7 +9,7 @@ import {
 import { toast } from "react-toastify";
 import { usePlaylistContext } from "../../context/PlaylistContext";
 import { saveAs } from "file-saver";
-import playIcon from "../../assets/play.gif";
+import play1Icon from "../../assets/play1.gif";
 import "./musicItem.scss";
 import { usePlayerContext } from "../../context/PlayerContext";
 
@@ -56,7 +56,7 @@ function MusicItem({ music }) {
         <span class="list-group-item smallOnPhone">
           <AiOutlineDownload onClick={handleDownload} />
         </span>
-          {isPlaying && currentLink===music.link && <img height={40} src={playIcon} />}
+          {isPlaying && currentLink===music.link && <img height={40} src={play1Icon} />}
       </div>
     </div>
   );

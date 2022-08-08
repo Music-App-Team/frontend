@@ -39,11 +39,9 @@ function Header({ toggleSidebar }) {
           </div>
         )}
       </div>
-      <div>hallo
-        
-      </div>
     </div>
   );
 }
 
 export default Header;
+
