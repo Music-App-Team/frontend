@@ -8,12 +8,7 @@ import {
 } from "react-icons/fa";
 import { usePlayerContext } from "../../context/PlayerContext";
 import "./player.scss";
-import playIcon from '../../assets/play.gif';
 import play1Icon from "../../assets/play1.gif";
-import play2Icon from "../../assets/play2.gif";
-import play3Icon from "../../assets/play3.gif";
-
-
 
 
 
