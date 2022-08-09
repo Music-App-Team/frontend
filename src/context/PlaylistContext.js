@@ -44,7 +44,7 @@ export const PlaylistContextProvider = ({ children }) => {
     };
   });
 
-  const togglePlayAll = () => {
+/*   const togglePlayAll = () => {
     if (!playing && songs && songs.length > 0) {
       audio.current.src = songs[currentSongIndex].link;
       audio.current.playbackRate = 10;
@@ -53,7 +53,7 @@ export const PlaylistContextProvider = ({ children }) => {
         setCurrentSongIndex((lastIndex) => lastIndex + 1);
       });
     } else audio.current.pause();
-  };
+  }; */
 
   useEffect(() => {
     if (!songs || !songs[currentSongIndex]) return;
@@ -71,7 +71,7 @@ export const PlaylistContextProvider = ({ children }) => {
         comments,
         loadPlaylistData,
         playlistId,
-        togglePlayAll,
+        //togglePlayAll,
       }}
     >
       {children}
