@@ -1,9 +1,8 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState} from 'react';
 import { Form } from "react-bootstrap";
 import Modal1 from "../../../components/modal/Modal1";
 import axios from "axios";
 import { toast } from "react-toastify";
-import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import InputGroup from "react-bootstrap/InputGroup";
@@ -118,6 +117,9 @@ const AddSongModal = ({ open, onClose, onUpdate, playlistId }) => {
                 <option>germany</option>
                 <option>persian</option>
                 <option>arabic</option>
+                <option>romanian</option>
+                <option>turkish</option>
+                <option>others</option>
               </Form.Select>
             </Form.Group>
           </Row>

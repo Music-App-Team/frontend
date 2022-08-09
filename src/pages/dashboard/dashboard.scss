@@ -49,19 +49,12 @@
 
       .trash {
         font-size: 1.8rem;
-
-        a {
-          color: rgb(249, 249, 249);
-          background-color: transparent;
-          text-decoration: none;
-        }
-
-        a:hover {
+      }
+        .trash:hover {
           color: #d76b45;
           background-color: transparent;
           text-decoration: underline;
         }
-      }
     }
   }
 }
