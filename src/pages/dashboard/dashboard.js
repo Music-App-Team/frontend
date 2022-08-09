@@ -37,8 +37,8 @@ function Dashboard() {
       <Table className="playlist-table">
         <thead>
           <tr>
-            <th>Name</th>
-            <th>Author</th>
+            <th>Playlist Name</th>
+            <th>User</th>
             <th>Actions</th>
           </tr>
         </thead>

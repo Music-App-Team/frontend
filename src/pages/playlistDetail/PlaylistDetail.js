@@ -1,7 +1,6 @@
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { useState } from "react";
 import "./playListDetail.scss";
-import { BsPlay } from "react-icons/bs";
 import SongList from "./components/songList";
 import { AiOutlineComment } from "react-icons/ai";
 import { MdDriveFileRenameOutline, MdAddBox } from "react-icons/md";
@@ -10,13 +9,14 @@ import AddSongModal from "././components/addSongModal";
 import { usePlaylistContext } from "../../context/PlaylistContext";
 import axios from "axios";
 import { toast } from "react-toastify";
+import Swal from "sweetalert2";
 
 function PlaylistDetail() {
   const [addSongModalOpen, setAddSongModalOpen] = useState(false);
   const { playlistId } = useParams();
   const [inRenameStatus, setInRenameStatus] = useState(false);
   const [renameText, setRenameText] = useState("");
-  const { playlistDetail, own, songs, loadPlaylistData, togglePlayAll } = usePlaylistContext();
+  const { playlistDetail, own, songs, loadPlaylistData} = usePlaylistContext();
   const navigate = useNavigate();
 
   if (!playlistDetail) return <p>loading ...</p>;
@@ -37,19 +37,58 @@ function PlaylistDetail() {
       .catch((err) => toast.error(err.response?.data?.message || err.message));
   };
 
+
+
+  const swalWithBootstrapButtons = Swal.mixin({
+    customClass: {
+      confirmButton: "btn btn-success m-2  border-success border-5 border-rounded-top",
+      cancelButton: "btn btn-danger border-danger border-5",
+    },
+    buttonsStyling: false,
+  });
+
+  
   const handleDeletePlaylist = () => {
-    axios
-      .delete("/playlist/deletePlaylist/" + playlistId)
-      .then((res) => {
-        toast.success("playlist removed successfully");
-        navigate("/app/playlists");
-      })
-      .catch((err) => toast.error(err.response?.data?.message || err.message));
+   swalWithBootstrapButtons
+   .fire({
+    title: "<strong>Are you sure you want to delete?</u></strong>",
+    icon: "question",
+    showCancelButton: true,
+    confirmButtonText:
+      '<img src="/images/thumbsUp.svg" alt="thumbsUp"/> ',
+    cancelButtonText:
+      '<img src="/images/thumbsDown.svg" alt="thumbsDown"/>',
+
+    reverseButtons: true,
+  })
+
+  .then((result) => {
+    if (result.isConfirmed) {
+      axios
+        .delete("/playlist/deletePlaylist/" + playlistId)
+        .then((res) => {
+          //toast.success("playlist removed successfully");
+          navigate("/app/playlists");
+        })
+        .catch((err) =>
+          toast.error(err.response?.data?.message || err.message)
+        );
+      swalWithBootstrapButtons.fire(
+        "<span><strong>Playlist was successfully deleted!</strong></span>",
+        '<span><img src="/images/ImHappy.svg" alt="ImHappy" /></span>',
+        "success"
+      );
+    } else if (result.dismiss === Swal.DismissReason.cancel) {
+      swalWithBootstrapButtons.fire(
+        "<strong>Playlist not deleted!!</u></strong>",
+        "<span></span>",
+        "info"
+      );
+    }
+  });
+
   };
 
-   const handlePlayAll = () => {
-     togglePlayAll();
-   };
 
   return (
     <>
@@ -82,9 +121,6 @@ function PlaylistDetail() {
               </Link>
             </p>
             <div className="detail__actions">
-              {/* <button className="play" onClick={handlePlayAll}> */}
-                {/* Play All <BsPlay /> */}
-              {/* </button> */}
               {own && (
                 <>
                   <div class="rename">
@@ -118,6 +154,6 @@ function PlaylistDetail() {
       />
     </>
   );
-}
 
+}
 export default PlaylistDetail;

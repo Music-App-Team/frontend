@@ -119,64 +119,62 @@ function Playlist() {
             Create
           </button>
         </div>
-        <div >
+        <div>
           <Table className="playlist-table">
             <thead>
               <tr>
-                <th>Name</th>
+                <th>Playlist Name</th>
                 <th>User</th>
                 <th>Actions</th>
               </tr>
             </thead>
             <tbody>
-              {playlists.map(
-                (item) => (
-                  <tr>
-                    <td>{item.title}</td>
-                    <td>{item.user?.firstName}</td>
-                    <td>
-                      <div className="container-action">
-                        <Link to={`/app/playlist/${item._id}`}>
-                          <button className="button-playlist">View</button>
-                        </Link>
-                        <span
-                          className="like"
-                          style={{
-                            color: likes.find((like) => item._id === like)
-                              ? "blue"
-                              : undefined,
-                          }}
-                          key={item._id}
-                          onClick={() => toggleLike(item._id)}
-                        >
-                          <AiOutlineLike />
-                        </span>
-                        <span
-                          className="dislike"
-                          style={{
-                            color: dislikes.find(
-                              (dislike) => item._id === dislike
-                            )
-                              ? "red"
-                              : undefined,
-                          }}
-                          key={item._id}
-                          onClick={() => toggleDisLike(item._id)}
-                        >
-                          <AiOutlineDislike />
-                        </span>
-                        <span
-                          className="star"
-                          href="url"
-                          onClick={() => handleAddToFavorite(item._id)}
-                        >
-                          <MdOutlineStarOutline />
-                        </span>
-                      </div>
-                    </td>
-                  </tr>
-                )
-              )}
+              {playlists.map((item) => (
+                <tr>
+                  <td>{item.title}</td>
+                  <td>{item.user?.firstName}</td>
+                  <td>
+                    <div className="container-action">
+                      <Link to={`/app/playlist/${item._id}`}>
+                        <button className="button-playlist">View</button>
+                      </Link>
+                      <span
+                        className="like"
+                        style={{
+                          color: likes.find((like) => item._id === like)
+                            ? "#0080FF"
+                            : undefined,
+                        }}
+                        key={item._id}
+                        onClick={() => toggleLike(item._id)}
+                      >
+                        <AiOutlineLike />
+                      </span>
+                      <span
+                        className="dislike"
+                        style={{
+                          color: dislikes.find(
+                            (dislike) => item._id === dislike
+                          )
+                            ? "#DF0105"
+                            : undefined,
+                        }}
+                        key={item._id}
+                        onClick={() => toggleDisLike(item._id)}
+                      >
+                        <AiOutlineDislike />
+                      </span>
+                      <span
+                        className="star"
+                        href="url"
+                        onClick={() => handleAddToFavorite(item._id)}
+                      >
+                        <MdOutlineStarOutline />
+                      </span>
+                    </div>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </Table>
         </div>
