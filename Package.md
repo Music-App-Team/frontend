@@ -1,15 +1,13 @@
-### FRONTEND
+## FRONTEND
 
-# Footer
+#Die Packages, die in frontend benutzt wurden:
 
--npm i bootstrap 
--npm i --save @fortawesome/react-fontawesome 
--npm i --save @fortawesome/free-brands-svg-icons 
--npm i file-saver(für download file)
+`Die mussen installiert werden:`
 
-
-# Comment Page 
-npm install react-bootstrap bootstrap
-## Comment page Install Moment to Convert the Time
+npm i bootstrap 
+npm i --save @fortawesome/react-fontawesome 
+npm i --save @fortawesome/free-brands-svg-icons 
+npm i file-saver(für download file)
+npm install sweetalert2
 npm install --save moment react-moment
 npm install --save moment-timezone
