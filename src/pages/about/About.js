@@ -21,40 +21,40 @@ function About() {
             <div className="li-name">
               <div className="li-a">
                 <li className="li-about">Aisha :</li>
-                <a href="https://github.com/aisha2000-hub">
+                <a href="https://github.com/aisha2000-hub" target="_blank" rel="noreferrer">
                   <li>GitHub -</li>
                 </a>
-                <a href="https://www.linkedin.com/in/aisha-noori/">
+                <a href="https://www.linkedin.com/in/aisha-noori/" target="_blank" rel="noreferrer">
                   <li>LinkedIn</li>
                 </a>
               </div>
 
               <div className="li-a">
                 <li className="li-about">Veaceslav :</li>
-                <a href="https://github.com/slavablack">
+                <a href="https://github.com/slavablack" target="_blank" rel="noreferrer">
                   <li>GitHub -</li>
                 </a>
-                <a href="https://www.linkedin.com/in/veaceslav-ciornii/">
+                <a href="https://www.linkedin.com/in/veaceslav-ciornii/" target="_blank" rel="noreferrer">
                   <li>LinkedIn</li>
                 </a>
               </div>
 
               <div className="li-a">
                 <li className="li-about">Jaber :</li>
-                <a href="https://github.com/jaber-1988">
+                <a href="https://github.com/jaber-1988" target="_blank" rel="noreferrer">
                   <li>GitHub -</li>
                 </a>
-                <a href="https://www.linkedin.com/in/jaber-abdullah-a02922239/">
+                <a href="https://www.linkedin.com/in/jaber-abdullah-a02922239/" target="_blank" rel="noreferrer">
                   <li>LinkedIn</li>
                 </a>
               </div>
               <div className="li-a">
                 <li className="li-about">Mazen :</li>
-                <a href="https://github.com/Mazen88cdi">
+                <a href="https://github.com/Mazen88cdi" target="_blank" rel="noreferrer">
                   <li>GitHub -</li>
                 </a>
 
-                <a href="https://www.linkedin.com/in/mazen-altaha-4590971b9/">
+                <a href="https://www.linkedin.com/in/mazen-altaha-4590971b9/" target="_blank" rel="noreferrer">
                   <li>LinkedIn</li>
                 </a>
               </div>
