@@ -1,7 +1,91 @@
-### User Sicht:
 
-Auf der erste Page (Login page) kann ich mich anmelden wenn ich einen Konto in der App erstellt habe. Wenn ich richtige “username” und password eingegeben habe drücke ich auf “login” button und springe ich in Home page. Wenn ich falsche Data eingebe wie falsches E-mail oder password bekomme ich einen Alert mit einem Hinweiß. In home Page habe ich die möglichkeit in “Play List “ und “Search Song” pages navigieren. Auch hier kann ich collection von musik offnen mit dem click auf “Open” , dann springe ich auf “Playlist” page wo kann ich musik hören, herunterladen, löchen oder einen neuen lied hinzufügen. Wenn ich keinen konto habe, kann ich auf “don’t have an account?sign up now” clicken und bin ich auf register seite gesprungen und habe die möglichkeit mich registrieren und wenn ich registriert bin kann ich mich einlogen.
 
-Page playlist: In diesem page ,ich habe die Möglichkeit, um playlist mit Button (Create) zu erstellen. Wenn ich auf Create klicke ,das führt mich zum ein pup up fenster und da kann lch die playlist benennen. Mit Button Create kann ich ein neue playlist erstellen.Wenn ich auf cancel klicken ,dann kann ich der Prozess abbrechen. Mit view Button kann ich ein playlist öffnen. Wenn ich auf die Sterne clicke, függe ich playlist zu my Favoriten hinzu.In diesem Seite kann mann die playlist bewerten. Page "playlistDetail":  Hier kann mann alle Informationen über die playlist bekommen und man hat der recht,die playlist  umbenennen, löschen, spielen oder ein Lied hinzufügen.
+<p align="center">
+  <img src="./public/images/logo_readme.png" alt="Logo" width="250">
+  </a>
+</p>
 
-Nachdem ich zu den Kommentaren gekommen bin, kann ich all die Kommentare von den anderen Usern, die sich bezüglich des playlists geäußert haben, sehen und selbst eine Bewertung schreiben. Ich denke, diese Funktion ist sehr hilfreich, denn man bekommt eine Vorstellung von dem playlist bevor man es sich anhört. In der „Playlist“ Seite gibt es die Möglichkeit ein Lied hinzuzufügen, welches durch das Drücken von dem Button „Add Song“ folgt. Daraufhin öffnet sich ein Fenster, das ähnlich wie ein Formular ist. Dort gebe den Namen des Songs, die Länge, den Album und der Artist an. Außerdem kann ich die Lieder nach ihren Sprachen einspeichern. Nicht zu vergessen kann ich die Lieder entweder von meinem Gerät uploaden oder ich kann den Link des Liedes eingeben und es wird automatisch hinzugefügt, indem ich auf „add“ drücke. Falls ich kein Lied hinzufügen möchte, drücke ich auf „cancel" und dann werde ich zu der „Playlist“ Seite wieder weitergeleitet. Bei der „Search Songs“ Seite kann ich nach playliste suchen, indem ich auf „search...“ drücke. Nachdem das Lied gefunden wurde, kann ich nun sehen, bei welches Playlist es ist. Dort steht welches Genre, wie viele Lieder es hat und von wem die Playlist ist. Dazu sehe ich auch die „view“ Button, welches mich dann zu den Bewertungen des Playliste hinführt. Außerdem wird mir ebenfalls das Lied mit den Informationen von wem das Lied ist, wie lang es ist und welche Sprache es hat, angezeigt.
+
+
+Musicfy, which means music to you, is an app that can also be used for mobile phones and created with React, Node, ExpressJs and etc.
+This is our final project as part of a WebDevelopment course at [DCI](https://digitalcareerinstitute.org).
+We developed and designed our app within 2 months and we certainly had many challenges but with good teamwork and a right plan, we were able to finish our app within that time.
+
+In Musify app, you can easily become a member and create a playlist and put all kinds of songs in it and listen and enjoy the songs on your list as well as other people's songs.
+
+
+---
+
+### More Information
+
+- 🖌 First draw on [Balsamiq](https://docdro.id/VVFqoCu)
+- 🚀 Wireframing on [Figma](https://www.figma.com/file/DLjxSO6QutQRupH6NYqqJ4/MAZEN?node-id=0%3A1)
+- 📖 Repository of our [Frontend](https://github.com/Music-App-Team/frontend) and [Backend](https://github.com/Music-App-Team/backend)
+- 👀 Presentation with [Canva](https://www.canva.com/design/DAFG1w59zWA/Qt_mNKQ65LeMkcRTTvN1uw/edit?utm_content=DAFG1w59zWA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+- :computer: Website [Musicfy](https://music-app-team.netlify.app/)
+
+---
+
+### We are on LinkedIn
+
+Looking for a motivated webDev? Visit us on LinkedIn:
+
+<div align="center">
+  <table>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/aisha-noori/">
+        <div>
+          <img src="./public/images/Aisha.png" height="150" alt="Doppler">
+        </div>
+        <b>Aisha Noori</b>
+        <div>
+        </div>
+      </a>
+    </td>
+    <td align="center">
+      <a  href="https://www.linkedin.com/in/jaber-abdullah-a02922239/">
+        <div>
+          <img src="./public/images/jaber.jpg" height="150" alt="Doppler">
+        </div>
+        <b>Jaber Abdullah</b>
+        <div>
+        </div>
+      </a>
+    </td>
+    <td align="center">
+      <a href="https://www.linkedin.com/in/veaceslav-ciornii/">
+        <div>
+          <img src="./public/images/veaceslav.jpg" height="150" alt="Doppler">
+        </div>
+        <b>Veaceslav Ciornii</b>
+        <div>
+        </div>
+      </a>
+    </td>
+    <td align="center">
+    <a href="https://www.linkedin.com/in/mazen-altaha-4590971b9/">
+        <div>
+          <img src="./public/images/Mazen.jpg" height="150" alt="Doppler">
+        </div>
+        <b>Mazen Altaha</b>
+        <div>
+        </div>
+      </a>
+    </td>
+  </table>
+</div>
+
+
+----
+
+<p align="center">
+  <img src="./public/images/frame.png" alt="Logo" width="250">
+  </a>
+ <p align="center"> Scan and Enjoy </p>
+</p>
+
+----
+
+<div align="center">
+Copyright © 2022 Musicfy
+</div>
