@@ -24,7 +24,7 @@ export default function Sidebar({isSidebarOpen,toggleSidebar}) {
         <li>
           <FaSistrix />
           <NavLink to="/app/search" className="text-item" onClick={toggleSidebar}>
-            Search Playlist
+            Search
           </NavLink>
         </li>
       </ul>
